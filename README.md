@@ -1,32 +1,6 @@
-# Welcome to Remix!
+# Remix-Slides
 
-- [Remix Docs](https://remix.run/docs)
-
-## Netlify Setup
-
-1. Install the [Netlify CLI](https://www.netlify.com/products/dev/):
-
-```sh
-npm i -g netlify-cli
-```
-
-If you have previously installed the Netlify CLI, you should update it to the latest version:
-
-```sh
-npm i -g netlify-cli@latest
-```
-
-2. Sign up and log in to Netlify:
-
-```sh
-netlify login
-```
-
-3. Create a new site:
-
-```sh
-netlify init
-```
+My attempt to build a slide deck app with MDX with Remix.
 
 ## Development
 
@@ -36,7 +10,7 @@ The Netlify CLI starts your app in development mode, rebuilding assets on file c
 npm run dev
 ```
 
-Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
+Open up [http://localhost:6112](http://localhost:6112), and you should be ready to go!
 
 ## Deployment
 
