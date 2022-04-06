@@ -7,7 +7,8 @@ My attempt to build a slide deck app with MDX with Remix.
 MDX for writing slides
 
 - Putting one or more MDX files in a folder is enough for the app to show the presentation slides.
-- Separate slides with "---". Concatenate all files in a folder ordered by filename.
+- Separate slides with "---". See https://github.dev/jxnblk/mdx-deck/blob/a4779fc0555e26bc241afd8176661d41fd6981ac/packages/gatsby-plugin/src/split-slides.js#L1
+- If multiple MDX files in a folder, then concatenate them all ordered by filename, before splitting.
 - Multiple presentations by placing them in their own folder.
 - Remix supports MDX out of the box, would that be an option, or not? https://remix.run/docs/en/v1/guides/mdx
 
@@ -18,15 +19,23 @@ Keyboard navigation
 
 Theming and styling
 
-- Create some "styled" components for aligning and positioning.
+- Create some "styled" components for aligning and positioning, which you can use in the MDX files.
+- Could this be optional, so that just Markdown slides also work?
 - Themable (borrow themes from MDX-Deck?).
 
 Modes (see MDX-Deck)
 
-- Presentation Mode ()
+- Presentation Mode
 - Overview Mode
 - Grid Mode
-- Sync between tabs and windows, so you can have the presentation on one screen and the
+- Sync between tabs and windows, so you can have the presentation on one screen and the slides + notes on the other
+
+## Prototype 🧪
+
+🗂 Put MDX files in a separate folder: Location of this folder?
+📄 Rendering MDX: Each MDX file is a slide
+➡️ Keyboard navigation: arrow keys for previous slide and next slide
+💅 Basic CSS styling: Center content horizontally and vertically 😱
 
 ## Development
 
