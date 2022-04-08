@@ -33,8 +33,11 @@ Modes (see MDX-Deck)
 ## Prototype 🧪
 
 🗂 Put MDX files in a separate folder: Location of this folder?
-📄 Rendering MDX: Each MDX file is a slide
+
+📄 Rendering MDX: Split on "---"
+
 ➡️ Keyboard navigation: arrow keys for previous slide and next slide
+
 💅 Basic CSS styling: Center content horizontally and vertically 😱
 
 ## Development
