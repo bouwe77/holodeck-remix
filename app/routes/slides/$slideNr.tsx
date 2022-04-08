@@ -4,6 +4,7 @@ import { Link, LoaderFunction, useLoaderData } from 'remix'
 import { getMdx } from '~/server/mdx.server'
 import { getSlides } from '~/server/getSlides.server'
 import { useNavigate } from 'react-router-dom'
+import useKeyboardNavigation from '~/client/useKeyboardNavigation'
 
 export type LoaderData = {
   slide: {
@@ -20,8 +21,6 @@ export type LoaderData = {
 const isNumeric = (value: any): value is number | string => !isNaN(parseFloat(value)) && isFinite(value)
 
 export const loader: LoaderFunction = async ({ params }): Promise<LoaderData> => {
-  //   const slides = await getSlides()
-
   if (!isNumeric(params.slideNr)) {
     throw new Response(`Not Found: slideNr '${params.slideNr}' should be numeric`, {
       status: 404,
@@ -50,6 +49,17 @@ export default () => {
   } = useLoaderData<LoaderData>()
 
   const navigate = useNavigate()
+
+  const goToNextSlide = React.useCallback(() => {
+    if (!nextSlideNr) return
+    navigate(`/slides/${nextSlideNr}`)
+  }, [navigate, nextSlideNr])
+  const goToPreviousSlide = React.useCallback(() => {
+    if (!previousSlideNr) return
+    navigate(`/slides/${previousSlideNr}`)
+  }, [navigate, previousSlideNr])
+
+  useKeyboardNavigation(goToNextSlide, goToPreviousSlide)
 
   const Component = React.useMemo(() => getMDXComponent(code), [code])
 
