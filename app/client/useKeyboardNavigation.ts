@@ -1,25 +1,17 @@
 import * as React from 'react'
 
+const goToNextKeys = ['ArrowRight', 'ArrowDown', 'PageDown', 'Space']
+const goToPreviousKeys = ['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace']
+
 const useKeyboardNavigation = (goToNextSlide: () => void, goToPreviousSlide: () => void) => {
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      switch (e.code) {
-        case 'ArrowRight':
-        case 'ArrowDown':
-        case 'PageDown':
-        case 'Space':
-          e.preventDefault()
-          goToNextSlide()
-          break
-        case 'ArrowLeft':
-        case 'ArrowUp':
-        case 'PageUp':
-        case 'Backspace':
-          e.preventDefault()
-          goToPreviousSlide()
-          break
-        default:
-          break
+      if (goToNextKeys.includes(e.key)) {
+        e.preventDefault()
+        goToNextSlide()
+      } else if (goToPreviousKeys.includes(e.key)) {
+        e.preventDefault()
+        goToPreviousSlide()
       }
     }
 
