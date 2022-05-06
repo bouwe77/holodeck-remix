@@ -14,6 +14,7 @@ const useKeyboardNavigation = (goToNextSlide: () => void, goToPreviousSlide: () 
         case 'ArrowLeft':
         case 'ArrowUp':
         case 'PageUp':
+        case 'Backspace':
           e.preventDefault()
           goToPreviousSlide()
           break
