@@ -49,9 +49,7 @@ Modes (see MDX-Deck)
 - [ ] Navigation bar:
 
                     Slide 3 of 4
-            [Previous] [1][2]3[4] [Next]
-
-- [ ] Enable/disable navigation bar
+            [Previous] [1] [2] 3 [4] [Next]
 
 ---
 
