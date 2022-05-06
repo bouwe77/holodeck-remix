@@ -1,6 +1,6 @@
 import { LoaderFunction, useLoaderData } from 'remix'
-import { useNavigate } from 'react-router-dom'
 import { getSlides, Slide } from '~/server/getSlides.server'
+import Header from '~/components/Header'
 
 type LoaderData = {
   slides: Slide[]
@@ -12,16 +12,13 @@ export const loader: LoaderFunction = async () => {
 }
 
 export default function Index() {
-  const { slides } = useLoaderData<LoaderData>()
-  const navigate = useNavigate()
+  //  const { slides } = useLoaderData<LoaderData>()
 
   return (
     <div>
+      <Header title="Travelling Through Space with React" />
       <h1>Slides</h1>
-
-      <div>
-        <button onClick={() => navigate(`/slides/${slides[0].nr}`)}>START PRESENTATION</button>
-      </div>
+      TO DO: Navigation bar + slide preview
     </div>
   )
 }
