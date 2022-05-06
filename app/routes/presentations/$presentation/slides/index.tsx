@@ -1,6 +1,6 @@
 import { LoaderFunction, useLoaderData } from 'remix'
-import Preview from '~/components/slide/Preview'
-import { Slide } from '~/components/slide/Slide'
+import Preview from '~/client/slide/Preview'
+import { Slide } from '~/client/slide/Slide'
 import { getSlides } from '~/server/getSlides.server'
 import { getMdx } from '~/server/mdx.server'
 

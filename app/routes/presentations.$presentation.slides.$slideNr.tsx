@@ -3,9 +3,9 @@ import { LoaderFunction, useLoaderData } from 'remix'
 import { getMdx } from '~/server/mdx.server'
 import { getSlides } from '~/server/getSlides.server'
 import { useNavigate } from 'react-router-dom'
-import useKeyboardNavigation from '~/client/useKeyboardNavigation'
-import Fullscreen from '~/components/slide/Fullscreen'
-import { Slide } from '~/components/slide/Slide'
+import useKeyboardNavigation from '~/client/navigation/useKeyboardNavigation'
+import Fullscreen from '~/client/slide/Fullscreen'
+import { Slide } from '~/client/slide/Slide'
 
 export type LoaderData = {
   slide: {
