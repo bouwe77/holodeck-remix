@@ -30,15 +30,54 @@ Modes (see MDX-Deck)
 - Grid Mode
 - Sync between tabs and windows, so you can have the presentation on one screen and the slides + notes on the other
 
-## Prototype 🧪
+# Prototype 🧪
 
-🗂 Put MDX files in a separate folder: Location of this folder?
+- [x] 🗂 Put MDX files in a separate folder: Location of this folder?
 
-📄 Rendering MDX: Split on "---"
+- [x] 📄 Rendering MDX: Split on "---"
 
-➡️ Keyboard navigation: arrow keys for previous slide and next slide
+- [x] ➡️ Keyboard navigation: arrow keys for previous slide and next slide
 
-💅 Basic CSS styling: Center content horizontally and vertically 😱
+- [ ] 💅 Basic CSS styling: Center content horizontally and vertically 😱
+
+# TO DO
+
+- [x] Open slides in presentation mode in separate tab
+
+- [ ] Presentation slug route
+
+- [ ] Navigation bar:
+
+                    Slide 3 of 4
+            [Previous] [1][2]3[4] [Next]
+
+- [ ] Enable/disable navigation bar
+
+---
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
 
 ## Development
 
