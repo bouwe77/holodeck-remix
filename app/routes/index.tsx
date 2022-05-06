@@ -1,11 +1,7 @@
-import { Link } from 'remix'
+import { LoaderFunction, redirect } from 'remix'
 
-export default function Index() {
-  return (
-    <div>
-      <h1>My Slides app</h1>
+//TODO Moet ik hier redirecten of kan ik gewoon iets renderen?
 
-      <Link to="/slides">Slides</Link>
-    </div>
-  )
+export const loader: LoaderFunction = () => {
+  return redirect('/presentations')
 }
