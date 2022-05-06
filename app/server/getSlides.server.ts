@@ -6,14 +6,16 @@ export type Slide = {
   mdxContent: string
 }
 
-export async function getSlides(): Promise<Slide[]> {
+export async function getSlides(presentationSlug: string): Promise<Slide[]> {
+  const presentationFolder = Path.join(__dirname, '../../app/slides', presentationSlug)
+
   const mdxFiles = await fs
-    .readdir(`${__dirname}/../../app/slides`, { withFileTypes: true })
+    .readdir(presentationFolder, { withFileTypes: true })
     .then((files) => files.filter((file) => file.isFile() && Path.extname(file.name) === '.mdx'))
 
   const slidesPerFile = await Promise.all(
     mdxFiles.map(async (file) => {
-      const filePath = Path.join(__dirname, '../../app/slides', file.name)
+      const filePath = Path.join(presentationFolder, file.name)
       const fileContents = await fs.readFile(filePath, 'utf8')
       return fileContents.split('---')
     }),
