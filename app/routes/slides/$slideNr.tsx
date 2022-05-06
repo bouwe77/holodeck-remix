@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
-import { Link, LoaderFunction, useLoaderData } from 'remix'
+import { LoaderFunction, useLoaderData } from 'remix'
 import { getMdx } from '~/server/mdx.server'
 import { getSlides } from '~/server/getSlides.server'
 import { useNavigate } from 'react-router-dom'
@@ -45,7 +45,6 @@ export const loader: LoaderFunction = async ({ params }): Promise<LoaderData> =>
 export default () => {
   const {
     slide: { code, previousSlideNr, nextSlideNr },
-    numberOfSlides,
   } = useLoaderData<LoaderData>()
 
   const navigate = useNavigate()
@@ -63,24 +62,5 @@ export default () => {
 
   const Component = React.useMemo(() => getMDXComponent(code), [code])
 
-  return (
-    <>
-      <div>
-        {Array(numberOfSlides)
-          .fill(0)
-          .map((_, i) => (
-            <Link to={`/slides/${i + 1}`} key={i}>
-              {i + 1}
-            </Link>
-          ))}
-      </div>
-
-      <div>
-        {previousSlideNr && <button onClick={() => navigate(`/slides/${previousSlideNr}`)}>Previous</button>}
-        {nextSlideNr && <button onClick={() => navigate(`/slides/${nextSlideNr}`)}>Next</button>}
-      </div>
-
-      <Component />
-    </>
-  )
+  return <Component />
 }
