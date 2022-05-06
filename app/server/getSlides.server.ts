@@ -7,7 +7,7 @@ export type Slide = {
 }
 
 export async function getSlides(presentationSlug: string): Promise<Slide[]> {
-  const presentationFolder = Path.join(__dirname, '../../app/slides', presentationSlug)
+  const presentationFolder = Path.join(__dirname, '../../slides', presentationSlug)
 
   const mdxFiles = await fs
     .readdir(presentationFolder, { withFileTypes: true })
