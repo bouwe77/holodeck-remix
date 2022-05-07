@@ -1,11 +1,14 @@
 import { Link, LoaderFunction, Outlet, useLoaderData } from 'remix'
+import { getPresentations } from '~/server/getSlides.server'
 
 interface LoaderData {
   presentations: string[]
 }
 
 export const loader: LoaderFunction = async (): Promise<LoaderData> => {
-  return { presentations: ['about-me', 'react'] }
+  const presentations = await getPresentations()
+
+  return { presentations: presentations.map((p) => p.slug) }
 }
 
 export default function Index() {

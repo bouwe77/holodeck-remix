@@ -6,8 +6,22 @@ export type Slide = {
   mdxContent: string
 }
 
+export type Presentation = {
+  slug: string
+}
+
+const slidesFolder = Path.resolve(__dirname, '../../slides')
+
+export async function getPresentations(): Promise<Presentation[]> {
+  const files = await fs.readdir(slidesFolder)
+  const presentations = files.map((file) => ({
+    slug: file,
+  }))
+  return presentations
+}
+
 export async function getSlides(presentationSlug: string): Promise<Slide[]> {
-  const presentationFolder = Path.join(__dirname, '../../slides', presentationSlug)
+  const presentationFolder = Path.join(slidesFolder, presentationSlug)
 
   const mdxFiles = await fs
     .readdir(presentationFolder, { withFileTypes: true })
