@@ -6,7 +6,11 @@ import { useNavigate } from 'react-router-dom'
 import useKeyboardNavigation from '~/client/navigation/useKeyboardNavigation'
 import Fullscreen from '~/client/slide/Fullscreen'
 import { Slide } from '~/client/slide/Slide'
+import styles from '~/styles/slide.css'
 
+export function links() {
+  return [{ rel: 'stylesheet', href: styles }]
+}
 export type LoaderData = {
   slide: {
     code: string
