@@ -1,3 +1,44 @@
+body {
+  background-color: black;
+  color: #eee;
+}
+
+.container {
+  display: grid;
+  grid-gap: 10px;
+  min-height: 100vh;
+}
+
+.center-horizontally-vertically {
+  display: grid;
+  place-items: center;
+}
+
+.content {
+  display: grid;
+  place-items: center;
+  grid-gap: 10px;
+}
+
 h1 {
-    color:red
+  font-size: 10vh;
+  color: #eee;
+}
+
+ul {
+  max-width: 60%;
+}
+
+p,
+li {
+  font-size: 3vh;
+  color: #eee;
+}
+
+li {
+  margin-bottom: 2vh;
+}
+
+img {
+  margin: 2vh;
 }

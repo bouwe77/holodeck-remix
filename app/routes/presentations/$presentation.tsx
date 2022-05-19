@@ -6,6 +6,8 @@ interface LoaderData {
 }
 
 export const loader: LoaderFunction = async ({ params }): Promise<LoaderData> => {
+  // No need to do in a loader, could also useSearchParams in the component.
+  // However, I will expand on this later and need a loader anyway, so let's leave it for now.
   return { presentationSlug: params.presentation ?? '' }
 }
 

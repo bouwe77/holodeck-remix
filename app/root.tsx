@@ -4,15 +4,7 @@ import type { MetaFunction } from 'remix'
 import styles from '~/styles/global.css'
 
 export function links() {
-  return [
-    // Reset everything
-    {
-      rel: 'stylesheet',
-      href: 'https://unpkg.com/modern-css-reset@1.4.0/dist/reset.min.css',
-    },
-    // Add global styles
-    { rel: 'stylesheet', href: styles },
-  ]
+  return [{ rel: 'stylesheet', href: styles }]
 }
 
 export const meta: MetaFunction = () => ({
