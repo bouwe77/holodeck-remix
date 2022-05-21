@@ -1,20 +1,19 @@
+import fs from 'fs/promises'
+import Path from 'path'
 import { bundleMDX } from 'mdx-bundler'
 
+const componentsFolder = Path.resolve(__dirname, '../../app/client/slides/layout')
+
 export const getMdx = async (mdxSourceCode: string) => {
+  const center = await fs.readFile(Path.join(componentsFolder, 'Center.tsx'), 'utf8')
+  const left = await fs.readFile(Path.join(componentsFolder, 'Left.tsx'), 'utf8')
+
   const result = await bundleMDX({
     source: mdxSourceCode,
-    // Deze files zijn dan de dingen die ik aanbied en je in je slides.mdx zou kunnen importeren
-    //     files: {
-    //       './demo.tsx': `
-    // import * as React from 'react'
-
-    // function Demo() {
-    //   return <div>Neat demo!</div>
-    // }
-
-    // export default Demo
-    //     `,
-    //     },
+    files: {
+      './Center.tsx': center,
+      './Left.tsx': left,
+    },
   })
 
   return result
