@@ -18,6 +18,8 @@ export default function Index() {
     <div>
       <h1>My Presentations</h1>
 
+      <h1>TODO "client" folder hernoemen naar "components"</h1>
+
       <div style={{ display: 'flex' }}>
         <div style={{ width: '200px' }}>
           <Link to="/presentations">Presentations</Link>
