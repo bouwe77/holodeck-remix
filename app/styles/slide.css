@@ -14,7 +14,7 @@ body {
   place-items: center;
 }
 
-.content {
+.center-content {
   display: grid;
   place-items: center;
   grid-gap: 10px;
@@ -41,4 +41,14 @@ li {
 
 img {
   margin: 2vh;
+}
+
+.left {
+  display: grid;
+  grid-template-rows: 15% 1fr;
+}
+
+.left-content {
+  display: grid;
+  grid-template-rows: 15% 1fr;
 }
