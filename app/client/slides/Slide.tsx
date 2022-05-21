@@ -6,11 +6,7 @@ export function Slide({ code }: { code: string }) {
 
   return (
     <div className="container">
-      <div className="center-horizontally-vertically">
-        <div className="content">
-          <Component />
-        </div>
-      </div>
+      <Component />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'remix'
 
-export default function Navigation({
+export default function SlideNavigation({
   numberOfSlides,
   previousSlideNr,
   nextSlideNr,
