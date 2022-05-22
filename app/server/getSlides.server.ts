@@ -25,7 +25,7 @@ export async function getSlides(presentationSlug: string): Promise<Slide[]> {
 
   const mdxFiles = await fs
     .readdir(presentationFolder, { withFileTypes: true })
-    .then((files) => files.filter((file) => file.isFile() && Path.extname(file.name) === '.mdx'))
+    .then((files) => files.filter((file) => file.isFile() && ['.mdx', '.md'].includes(Path.extname(file.name))))
 
   const slidesPerFile = await Promise.all(
     mdxFiles.map(async (file) => {
