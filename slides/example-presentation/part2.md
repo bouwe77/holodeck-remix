@@ -1,19 +1,9 @@
-import Left from './Left'
-
-<Left>
-
 # A pic says more...
 
 ![This is an image](https://picsum.photos/id/1018/600/600)
-
-</Left>
 
 ---
 
 import Center from './Center'
 
-<Center>
-
 # OK thanks Bye 👋
-
-</Center>
