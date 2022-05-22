@@ -47,7 +47,7 @@ img {
 .left {
   display: grid;
   grid-template-rows: 5% 1fr;
-  min-width: 160vh;
+  min-width: 130vh;
 }
 
 .left-content {
