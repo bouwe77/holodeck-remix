@@ -9,7 +9,7 @@ body {
   min-height: 100vh;
 }
 
-.center-horizontally-vertically {
+.center {
   display: grid;
   place-items: center;
 }
@@ -27,6 +27,7 @@ h1 {
 
 ul {
   max-width: 60%;
+  margin: 50px;
 }
 
 p,
@@ -45,7 +46,8 @@ img {
 
 .left {
   display: grid;
-  grid-template-rows: 15% 1fr;
+  grid-template-rows: 5% 1fr;
+  min-width: 160vh;
 }
 
 .left-content {
