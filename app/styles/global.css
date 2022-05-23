@@ -11,7 +11,6 @@ html {
   box-sizing: border-box;
   font-family: Tahoma;
   color: var(--black);
-  margin: 10px;
 }
 
 /* inherit box-sizing from .html */

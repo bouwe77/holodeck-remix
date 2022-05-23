@@ -3,15 +3,27 @@
   grid-template-rows: 60px 1fr;
 }
 
+.header {
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
 .main {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 200px 1fr;
 }
 
 .content {
+  padding: 10px 20px;
   display: grid;
   min-height: 400px;
-  grid-template-rows: 1fr 100px;
+  grid-template-rows: 1fr 20px;
+}
+
+.presentations {
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-bottom-right-radius: 10px;
 }
 
 ul.presentations-nav {
@@ -38,18 +50,23 @@ a:hover {
   text-decoration: underline;
 }
 
-.header {
+.presentation-header {
   display: grid;
   grid-template-rows: 70px 1fr;
 }
 
 button.start-presentation {
-  border: 1px solid goldenrod;
+  border: 1px solid #ddd;
   width: 200px;
   height: 50px;
   font-family: 'Raleway';
   font-size: 16px;
-  font-weight: 600;
+  font-weight: bolder;
+  border-radius: 5px;
+}
+
+button.start-presentation:hover {
+  border: 2px solid goldenrod;
 }
 
 .footer {

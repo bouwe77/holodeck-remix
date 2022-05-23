@@ -21,12 +21,12 @@ export default function Index() {
 
   return (
     <div className="container">
-      <div>
-        <h1>My Presentations</h1>
+      <div className="header">
+        <h1>My slides</h1>
       </div>
 
       <div className="main">
-        <div>
+        <div className="presentations">
           <ul className="presentations-nav">
             {presentations.map((presentation) => (
               <li key={presentation}>
