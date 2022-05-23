@@ -4,6 +4,4 @@
 
 ---
 
-import Center from './Center'
-
 # OK thanks bye 👋
