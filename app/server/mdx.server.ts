@@ -2,7 +2,7 @@ import fs from 'fs/promises'
 import Path from 'path'
 import { bundleMDX } from 'mdx-bundler'
 
-const componentsFolder = Path.resolve(__dirname, '../../app/client/slides/layout')
+const componentsFolder = Path.resolve(__dirname, '../../app/components/slides/layout')
 const kutzooi = Path.resolve(__dirname, '../../slides/example-presentation')
 
 const getComponentFilenames = async (folder: string) => {

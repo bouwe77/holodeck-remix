@@ -1,5 +1,5 @@
 import { LoaderFunction, Outlet, useLoaderData } from 'remix'
-import Header from '~/client/portal/Header'
+import Header from '~/components/portal/Header'
 
 interface LoaderData {
   presentationSlug: string
