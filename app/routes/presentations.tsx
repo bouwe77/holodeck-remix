@@ -1,5 +1,10 @@
 import { Link, LoaderFunction, Outlet, useLoaderData } from 'remix'
 import { getPresentations } from '~/server/getSlides.server'
+import styles from '~/styles/presentation.css'
+
+export function links() {
+  return [{ rel: 'stylesheet', href: styles }]
+}
 
 interface LoaderData {
   presentations: string[]
@@ -15,13 +20,14 @@ export default function Index() {
   const { presentations } = useLoaderData<LoaderData>()
 
   return (
-    <div>
-      <h1>My Presentations</h1>
+    <div className="container">
+      <div>
+        <h1>My Presentations</h1>
+      </div>
 
-      <div style={{ display: 'flex' }}>
-        <div style={{ width: '200px' }}>
-          <Link to="/presentations">Presentations</Link>
-          <ul>
+      <div className="main">
+        <div>
+          <ul className="presentations-nav">
             {presentations.map((presentation) => (
               <li key={presentation}>
                 <Link to={`/presentations/${presentation}/slides`}>{presentation}</Link>
@@ -30,8 +36,12 @@ export default function Index() {
           </ul>
         </div>
 
-        <div>
+        <div className="content">
           <Outlet />
+
+          <div className="footer">
+            copyright &copy; <a href="https://bouwe.io">Bouwe</a> 2022
+          </div>
         </div>
       </div>
     </div>

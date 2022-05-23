@@ -1,0 +1,56 @@
+.container {
+  display: grid;
+  grid-template-rows: 60px 1fr;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+}
+
+.content {
+  display: grid;
+  min-height: 400px;
+  grid-template-rows: 1fr 100px;
+}
+
+ul.presentations-nav {
+  list-style-type: none;
+  padding-top: 10px;
+}
+
+.presentations-nav li {
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: cornflowerblue;
+  margin: 0 0 0px 0;
+}
+
+a,
+a:visited {
+  color: goldenrod;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 70px 1fr;
+}
+
+button.start-presentation {
+  border: 1px solid goldenrod;
+  width: 200px;
+  height: 50px;
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer {
+}

@@ -34,13 +34,13 @@ export default function Index() {
 
   return (
     <div>
-      <h1>Slides</h1>
+      {/* <h1>Slides</h1>
 
       {slides.map((slide) => (
         <Preview key={slide.nr}>
           <Slide code={slide.code} />
         </Preview>
-      ))}
+      ))} */}
     </div>
   )
 }

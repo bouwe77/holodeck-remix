@@ -2,14 +2,14 @@ import { Link } from 'remix'
 
 export default function Header({ slug }: { slug: string }) {
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ minWidth: '300px' }}>
+    <div className="header">
+      <div style={{ margin: 0, padding: 0 }}>
         <h1>{slug}</h1>
       </div>
 
-      <div style={{ margin: '30px' }}>
+      <div>
         <Link to={`/presentations/${slug}/slides/1`} target="_blank">
-          <button style={{ width: '200px' }}>START PRESENTATION</button>
+          <button className="start-presentation">START PRESENTATION</button>
         </Link>
       </div>
     </div>
