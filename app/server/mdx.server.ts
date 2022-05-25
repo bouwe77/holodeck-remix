@@ -1,48 +1,44 @@
 import fs from 'fs/promises'
 import Path from 'path'
 import { bundleMDX } from 'mdx-bundler'
+import { sync as getFiles } from 'glob'
 
-const componentsFolder = Path.resolve(__dirname, '../../app/components/slides/layout')
-const kutzooi = Path.resolve(__dirname, '../../slides/example-presentation')
+const layoutComponentsFolder = Path.resolve(__dirname, '../../app/components/slides/layout')
+const slidesFolder = Path.resolve(__dirname, '../../slides')
 
-const getComponentFilenames = async (folder: string) => {
-  const files = await fs
-    .readdir(folder, { withFileTypes: true })
-    .then((files) => files.filter((file) => file.isFile() && Path.extname(file.name) === '.tsx'))
-    .then((files) => files.map((file) => file.name))
-
-  return files
-}
-
-const getComponentContents = async (folder: string, filenames: string[]) => {
-  const stuff = await Promise.all(
-    filenames.map(async (file) => {
-      const filePath = Path.join(folder, file)
+const getComponentContents = async (filePaths: string[]) => {
+  // Read file contents of all filePaths.
+  const componentContents = await Promise.all(
+    filePaths.map(async (filePath) => {
       const fileContents = await fs.readFile(filePath, 'utf8')
+      const componentName = `./${Path.basename(filePath, '.tsx')}`
       return {
-        [`./${file}`]: fileContents,
+        componentName,
+        fileContents,
       }
     }),
   )
 
-  return stuff.reduce((acc, curr) => ({ ...acc, ...curr }), {})
+  // Create an object where the .tsx filename is the key and its file contents the value.
+  const components = componentContents.reduce((acc, { componentName, fileContents }) => {
+    acc[componentName] = fileContents
+    return acc
+  }, {} as { [key: string]: string })
+
+  return components
 }
 
 export const getMdx = async (mdxSourceCode: string) => {
-  const componentFilenames = await getComponentFilenames(componentsFolder)
-  const componentFilenames2 = await getComponentFilenames(kutzooi)
+  //TODO No need to read all these components with every request, so where to put this?
+  const componentPaths = [...getFiles(`${layoutComponentsFolder}/**/*.tsx`), ...getFiles(`${slidesFolder}/**/*.tsx`)]
+  const components = await getComponentContents(componentPaths)
 
-  // create prut object: key is componentFilenames, file contents is value
-  const prut = await getComponentContents(componentsFolder, componentFilenames)
-  const prut2 = await getComponentContents(kutzooi, componentFilenames2)
-
-  const result = await bundleMDX({
+  const bundledMdx = await bundleMDX({
     source: mdxSourceCode,
     files: {
-      ...prut,
-      ...prut2,
+      ...components,
     },
   })
 
-  return result
+  return bundledMdx
 }
