@@ -13,7 +13,9 @@ interface LoaderData {
 export const loader: LoaderFunction = async (): Promise<LoaderData> => {
   const presentations = await getPresentations()
 
-  return { presentations: presentations.map((p) => p.slug) }
+  return {
+    presentations: presentations.map((p) => p.slug).sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)),
+  }
 }
 
 export default function Index() {
