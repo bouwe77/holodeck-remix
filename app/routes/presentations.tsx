@@ -40,7 +40,7 @@ export default function Index() {
           <Outlet />
 
           <div className="footer">
-            copyright &copy; <a href="https://bouwe.io">Bouwe</a> 2022
+            made by <a href="https://bouwe.io">Bouwe</a>
           </div>
         </div>
       </div>
