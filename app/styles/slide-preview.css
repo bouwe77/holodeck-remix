@@ -1,0 +1,63 @@
+/* Note: Keep these styles in sync with slide-fullscreen.css, until I have a better solution. */
+
+/* body {
+  background-color: black;
+  color: #eee;
+} */
+
+/* This slide-preview class corresponds with the body in slide-fullscreen.css */
+.slide-preview {
+  background-color: black;
+  color: #eee;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.slide-preview .container {
+  display: grid;
+  min-height: 300px;
+}
+
+.slide-preview .center {
+  display: grid;
+  min-height: 300px;
+  place-items: center;
+}
+
+.slide-preview .center-content {
+  display: grid;
+  place-items: center;
+  grid-gap: 10px;
+}
+
+.slide-preview h1 {
+  font-size: 2vh;
+  color: #eee;
+}
+
+.slide-preview ul {
+}
+
+.slide-preview p,
+.slide-preview li {
+  font-size: 1vh;
+  color: #eee;
+}
+
+.slide-preview li {
+}
+
+.slide-preview img {
+  margin: 1vh;
+}
+
+.slide-preview .left {
+  display: grid;
+  grid-template-rows: 5% 1fr;
+}
+
+.slide-preview .left-content {
+  display: grid;
+  grid-template-rows: 55% 1fr;
+}
