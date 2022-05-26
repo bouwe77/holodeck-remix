@@ -39,20 +39,23 @@
   max-height: 200px;
 }
 
+.slide-preview ul {
+  padding-left: 20px;
+}
+
 iframe {
   display: none;
 }
 
-/* For now, left has the styles copied from center */
 .slide-preview .left {
   display: grid;
-  /* min-height: 300px; */
-  min-height: 200px; /* shrug... */
-  place-items: center;
+  grid-template-rows: 25% 1fr;
+  min-height: 200px;
+  min-width: 300px;
 }
 
 .slide-preview .left-content {
   display: grid;
-  place-items: center;
-  grid-gap: 10px;
+  padding-left: 20px;
+  grid-template-rows: 25% 1fr;
 }
