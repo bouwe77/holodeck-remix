@@ -59,3 +59,14 @@ iframe {
   padding-left: 20px;
   grid-template-rows: 25% 1fr;
 }
+
+.link-to-slide {
+  width: 312px;
+  height: 312px;
+  border: 6px solid transparent;
+}
+
+.link-to-slide:hover {
+  border: 6px solid goldenrod;
+  cursor: pointer;
+}

@@ -1,3 +1,4 @@
+import { Link, useNavigate } from '@remix-run/react'
 import { LoaderFunction, useLoaderData } from 'remix'
 import Preview from '~/components/slides/Preview'
 import { Slide } from '~/components/slides/Slide'
@@ -27,11 +28,21 @@ export const loader: LoaderFunction = async ({ params }) => {
   const slidesWithMdx = await Promise.all(
     slides.map(async (slide) => {
       const mdx = await getMdx(slide.mdxContent)
-      return { ...slide, ...mdx }
+      return { ...slide, ...mdx, presentationSlug }
     }),
   )
 
   return { slides: slidesWithMdx }
+}
+
+const LinkToSlide = ({ children, url }) => {
+  const navigate = useNavigate()
+
+  return (
+    <div className="link-to-slide" onClick={() => navigate(url)}>
+      {children}
+    </div>
+  )
 }
 
 export default function Index() {
@@ -47,9 +58,11 @@ export default function Index() {
 
       <div className="slides">
         {slides.map((slide) => (
-          <Preview key={slide.nr}>
-            <Slide code={slide.code} />
-          </Preview>
+          <LinkToSlide key={slide.nr} url={`/presentations/${slide.presentationSlug}/slides/${slide.nr}`}>
+            <Preview>
+              <Slide code={slide.code} />
+            </Preview>
+          </LinkToSlide>
         ))}
       </div>
     </div>
