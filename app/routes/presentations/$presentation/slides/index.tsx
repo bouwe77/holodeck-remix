@@ -50,8 +50,6 @@ export default function Index() {
 
   return (
     <div className="slides-container">
-      <h1>Slides</h1>
-
       {slides.length === 0 || (slides.length === 1 && slides[0].mdxContent === '') ? (
         <p>Please add some slides to this presentation</p>
       ) : null}
