@@ -60,6 +60,8 @@ Modes (see MDX-Deck)
 
 - [ ] ♻️ Nicer transition between slides
 
+- [ ] 🔥 Inline live coding (a la CodeSandbox), which persists the changes
+
 ---
 
 .
