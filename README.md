@@ -38,18 +38,7 @@ Modes (see MDX-Deck)
 
 - [x] ➡️ Keyboard navigation: arrow keys for previous slide and next slide
 
-- [ ] 💅 Basic CSS styling: Center content horizontally and vertically 😱
-
-# TO DO
-
-- [x] Open slides in presentation mode in separate tab
-
-- [ ] Presentation slug route
-
-- [ ] Navigation bar:
-
-                    Slide 3 of 4
-            [Previous] [1] [2] 3 [4] [Next]
+- [x] 💅 Basic CSS styling: Center content horizontally and vertically 😱
 
 ---
 
