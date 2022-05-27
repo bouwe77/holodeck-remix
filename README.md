@@ -1,6 +1,6 @@
 # Remix-Slides
 
-My attempt to build a slide deck app with MDX with Remix.
+My attempt to build a slide deck app with MDX and Remix.
 
 # Requirements & Fuctionality
 
