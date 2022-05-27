@@ -1,23 +1,16 @@
 import { useState } from 'react'
 
-const containerStyle = { display: 'flex', margin: '120px' }
+const containerStyle = {
+  margin: '30px',
+}
 
 const buttonStyle = {
   border: 'none',
-  width: '150px',
-  height: '150px',
-  fontSize: '6em',
+  width: '120px',
+  height: '120px',
+  fontSize: '5vh',
   backgroundColor: 'cornflowerblue',
   borderRadius: '5%',
-}
-
-const counterStyle = {
-  fontSize: '8em',
-  margin: '0px 30px',
-  width: '200px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
 }
 
 const Counter = () => {
@@ -25,12 +18,8 @@ const Counter = () => {
 
   return (
     <div style={containerStyle}>
-      <button style={buttonStyle} onClick={() => setCount((count) => count - 1)}>
-        -
-      </button>
-      <span style={counterStyle}>{count}</span>
       <button style={buttonStyle} onClick={() => setCount((count) => count + 1)}>
-        +
+        {count}
       </button>
     </div>
   )
