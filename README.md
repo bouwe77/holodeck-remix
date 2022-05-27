@@ -7,7 +7,7 @@ My attempt to build a slide deck app with MDX with Remix.
 MDX for writing slides
 
 - Putting one or more MDX files in a folder is enough for the app to show the presentation slides.
-- Separate slides with "---". See https://github.dev/jxnblk/mdx-deck/blob/a4779fc0555e26bc241afd8176661d41fd6981ac/packages/gatsby-plugin/src/split-slides.js#L1
+- Separate slides with "---".
 - If multiple MDX files in a folder, then concatenate them all ordered by filename, before splitting.
 - Multiple presentations by placing them in their own folder.
 - Remix supports MDX out of the box, would that be an option, or not? https://remix.run/docs/en/v1/guides/mdx
@@ -30,15 +30,35 @@ Modes (see MDX-Deck)
 - Grid Mode
 - Sync between tabs and windows, so you can have the presentation on one screen and the slides + notes on the other
 
-# Prototype 🧪
+# TO DO 🧪
 
-- [x] 🗂 Put MDX files in a separate folder: Location of this folder?
+- [x] 🗂 Put MDX files in a separate folder, with sub folder for each presentation
 
 - [x] 📄 Rendering MDX: Split on "---"
 
+- [x] 📃 Split presentation slides into multiple files, both Markdown (.md) and MDX files (.mdx).
+
 - [x] ➡️ Keyboard navigation: arrow keys for previous slide and next slide
 
-- [x] 💅 Basic CSS styling: Center content horizontally and vertically 😱
+- [x] 💅 Basic CSS styling: Center content horizontally and vertically, but also left align content 😱
+
+- [x] ⚛️ Importing components into MDX, either those from `remix-slides`, or your own components.
+
+- [x] 🖼 Portal that shows all presentation, and preview thunbnails of presentation slides.
+
+- [ ] 🐞 Import component once per MDX file, so all slides can use it
+
+- [ ] 🐞 Read importable React components once, upon start of the app, instead of when navigating each slide
+
+- [ ] 🎡 Theming by customizing CSS from the `slides` folder, perhaps with frontmatter?
+
+- [ ] 👩‍🏫 Presentation mode: Speaker notes, navigate though slides, sync between tabs (Broadcast API or web sockets?)
+
+- [ ] ⚙️ Deploy to a cloud provider, however, how can I make sure other people can choose their own? 🤔
+
+- [ ] 🔁 Having content in a single slide appear step by step, before moving to the next slide
+
+- [ ] ♻️ Nicer transition between slides
 
 ---
 
