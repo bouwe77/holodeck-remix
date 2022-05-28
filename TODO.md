@@ -12,7 +12,7 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 - [ ] 🈁 Better layouts: All the children of a slide should be separate grid rows which have the height of their content. Then the `Center` and `Left` component only simply align the content, so you can use them everywhere, even as children.
 
-- [ ] ⁉️ What happens when sorting out the importable components for MDX Bundler when there are multiple components with the same name?
+- [ ] 🔂 Only import presentation specific components, by passing the presentation name to the `getMdx` function.
 
 ### Should Have
 
