@@ -2,6 +2,15 @@
 
 An app for presenting your slide decks, which you write in Markdown or MDX in your favorite IDE or editor. Built with Remix.
 
+# Features
+
+- Create multiple presentations within one project.
+- Write your presentation by creating one or more Markdown and/or MDX files.
+- Slides are separated with an `---`.
+- A portal shows you an overview of all presentations and its slides.
+- Start a presentation in full screen mode and navigate through slides with your keyboard.
+- Slide content is aligned centered horizontally and vertically, unless you wrap it in a `<Left>content here</Left>` component.
+
 # Usage
 
 Clone and start the app:
@@ -26,4 +35,4 @@ Create your first presentation:
 
 # Roadmap
 
-See [TODO.md](./TODO.md), where I keep things I might build some day...
+See [TODO.md](./TODO.md), where I keep track of and work out things I might build some day...
