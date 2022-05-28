@@ -1,4 +1,4 @@
-# Remix-Slides
+# Slidexx
 
 An app for presenting your slide decks, which you write in Markdown or MDX in your favorite IDE or editor. Built with Remix.
 
@@ -16,8 +16,8 @@ An app for presenting your slide decks, which you write in Markdown or MDX in yo
 Clone and start the app:
 
 ```sh
-git clone https://github.com/bouwe77/remix-slides
-cd remix-slides
+git clone https://github.com/bouwe77/slidexx
+cd slidexx
 npm run dev
 ```
 

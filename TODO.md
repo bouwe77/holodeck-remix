@@ -70,6 +70,6 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 - [x] 💅 Basic CSS styling: Center content horizontally and vertically, but also left align content 😱
 
-- [x] ⚛️ Importing components into MDX, either those from `remix-slides`, or your own components.
+- [x] ⚛️ Importing components into MDX, either those from `slidexx`, or your own components.
 
 - [x] 🖼 Portal that shows all presentations, and preview thumbnails of presentation slides.
