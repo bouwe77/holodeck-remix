@@ -18,7 +18,8 @@ Clone and start the app:
 
 ```sh
 git clone https://github.com/bouwe77/holodeck
-cd slidexx
+cd holodeck
+npm i
 npm run dev
 ```
 
