@@ -1,4 +1,5 @@
-# Slidexx
+<h1 align="center">Holodeck ✴️ ❇️ ⚛️</h1>
+<p align="center">Quickly create a slide deck with Markdown and MDX</p>
 
 An app for presenting your slide decks, which you write in Markdown or MDX in your favorite IDE or editor. Built with Remix.
 
@@ -16,7 +17,7 @@ An app for presenting your slide decks, which you write in Markdown or MDX in yo
 Clone and start the app:
 
 ```sh
-git clone https://github.com/bouwe77/slidexx
+git clone https://github.com/bouwe77/holodeck
 cd slidexx
 npm run dev
 ```

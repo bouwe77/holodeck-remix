@@ -24,7 +24,8 @@ export default function Index() {
   return (
     <div className="container">
       <div className="header">
-        <h1>My slides</h1>
+        <h1>Holodeck</h1>
+        <h2>Quickly create a slide deck with Markdown and MDX</h2>
       </div>
 
       <div className="main">
