@@ -3,8 +3,8 @@ import Path from 'path'
 import { bundleMDX } from 'mdx-bundler'
 import { sync as getFiles } from 'glob'
 
-const layoutComponentsFolder = Path.resolve(__dirname, '../../app/components/slides/layout')
-const slidesFolder = Path.resolve(__dirname, '../../slides')
+const layoutComponentsFolder = Path.resolve(__dirname, '../app/components/slides/layout')
+const slidesFolder = Path.resolve(__dirname, '../slides')
 
 const getComponentContents = async (filePaths: string[]) => {
   // Read file contents of all filePaths.

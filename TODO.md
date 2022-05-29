@@ -4,8 +4,6 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 ### Next Up
 
-- [ ] 📵 Remove Netlify deployment setup from app code
-
 - [ ] 🚪 Make port configurable and document this
 
 - [ ] 🚸 Portal better navigation / routing
@@ -55,6 +53,8 @@ This is a list of all the ideas I have to further improve and expand this projec
 - [ ] 📱 Swipe to go to next/prev slide on mobile
 
 ### Improvements End of May 2022 (DONE ✅)
+
+- [x] 📵 Remove Netlify deployment setup from app code
 
 - [x] 🆒 Figure out a name for this project and repository. Perhaps a Star Trek related word again? (Holodeck it is!)
 

@@ -1,4 +1,5 @@
-import { Link, LoaderFunction, Outlet, useLoaderData } from 'remix'
+import { useLoaderData, Link, Outlet } from '@remix-run/react'
+import { LoaderFunction } from '@remix-run/node'
 import { getPresentations } from '~/server/getSlides.server'
 import styles from '~/styles/presentation.css'
 

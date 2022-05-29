@@ -10,7 +10,7 @@ export type Presentation = {
   slug: string
 }
 
-const slidesFolder = Path.resolve(__dirname, '../../slides')
+const slidesFolder = Path.resolve(__dirname, '../slides')
 
 export async function getPresentations(): Promise<Presentation[]> {
   const files = await fs.readdir(slidesFolder)

@@ -1,5 +1,4 @@
-import { Link, useNavigate } from '@remix-run/react'
-import { LoaderFunction, useLoaderData } from 'remix'
+import { useLoaderData, useNavigate } from '@remix-run/react'
 import Preview from '~/components/slides/Preview'
 import { Slide } from '~/components/slides/Slide'
 import { getSlides } from '~/server/getSlides.server'
@@ -21,7 +20,7 @@ type LoaderData = {
   presentationSlug: string
 }
 
-export const loader: LoaderFunction = async ({ params }) => {
+export const loader = async ({ params }) => {
   const presentationSlug = params.presentation ?? ''
   const slides = await getSlides(presentationSlug)
 

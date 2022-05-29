@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { LoaderFunction, useLoaderData } from 'remix'
+import { useLoaderData } from '@remix-run/react'
+import { LoaderFunction } from '@remix-run/node'
 import { getMdx } from '~/server/mdx.server'
 import { getSlides } from '~/server/getSlides.server'
 import { useNavigate } from 'react-router-dom'
