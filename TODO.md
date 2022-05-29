@@ -6,9 +6,9 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 - [ ] 📵 Remove Netlify deployment setup from app code
 
-- [ ] 🚸 Portal better navigation / routing
+- [ ] 🚪 Make port configurable and document this
 
-- [ ] 🆒 Figure out a name for this project and repository. Perhaps a Tamarian word again?
+- [ ] 🚸 Portal better navigation / routing
 
 - [ ] 🈁 Better layouts: All the children of a slide should be separate grid rows which have the height of their content. Then the `Center` and `Left` component only simply align the content, so you can use them everywhere, even as children.
 
@@ -54,11 +54,13 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 - [ ] 📱 Swipe to go to next/prev slide on mobile
 
-### Improvements May 2022 (DONE ✅)
+### Improvements End of May 2022 (DONE ✅)
 
-...
+- [x] 🆒 Figure out a name for this project and repository. Perhaps a Star Trek related word again? (Holodeck it is!)
 
-### Prototype May 2022 (DONE ✅)
+- [x] ✍️ Write something about features and usage in README
+
+### Prototype May 27 2022 (DONE ✅)
 
 - [x] 🗂 Put MDX files in a separate folder, with sub folder for each presentation
 
@@ -70,6 +72,6 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 - [x] 💅 Basic CSS styling: Center content horizontally and vertically, but also left align content 😱
 
-- [x] ⚛️ Importing components into MDX, either those from `slidexx`, or your own components.
+- [x] ⚛️ Importing components into MDX, either those from `holodeck`, or your own components.
 
 - [x] 🖼 Portal that shows all presentations, and preview thumbnails of presentation slides.
