@@ -4,8 +4,6 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 ### Next Up
 
-- [ ] 🚪 Make port configurable and document this
-
 - [ ] 🚸 Portal better navigation / routing
 
 - [ ] 🈁 Better layouts: All the children of a slide should be separate grid rows which have the height of their content. Then the `Center` and `Left` component only simply align the content, so you can use them everywhere, even as children.
@@ -53,6 +51,8 @@ This is a list of all the ideas I have to further improve and expand this projec
 - [ ] 📱 Swipe to go to next/prev slide on mobile
 
 ### Improvements End of May 2022 (DONE ✅)
+
+- [x] 🚪 Make port configurable and document this
 
 - [x] 📵 Remove Netlify deployment setup from app code
 
