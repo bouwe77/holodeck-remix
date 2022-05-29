@@ -27,13 +27,13 @@ Create your first presentation:
 
 - Open the `slides` folder.
 - Create a sub folder with the name of your presentation.
-- In that folder, create a .md or .mdx file, for example `slides.mdx`.
+- In that folder, create an .md or .mdx file, for example `slides.mdx`.
 - Add some text to that file, for example `# Welcome` and save.
 - Refresh the app in the browser, navigate to your presentation.
 - Click the "Start Presentation" button.
 - Add more slides in the same file by separating them with `---`.
 - Or create another .md or .mdx file and add slides there.
-- Refresh the browser evey time you change something to your slides.
+- Refresh the browser every time you change something to your slides.
 
 # Roadmap
 
