@@ -1,11 +1,5 @@
 const Center = ({ children }) => {
-  return (
-    <div className="container">
-      <div className="center">
-        <div className="center-content">{children}</div>
-      </div>
-    </div>
-  )
+  return <div className="content-align-center">{children}</div>
 }
 
 export default Center
