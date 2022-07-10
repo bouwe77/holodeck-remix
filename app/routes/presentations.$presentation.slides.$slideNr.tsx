@@ -13,12 +13,14 @@ export function links() {
   return [{ rel: 'stylesheet', href: styles }]
 }
 
+type SlideSettings = {
+  verticalAlign: 'top' | 'center'
+}
+
 export type LoaderData = {
   slide: {
     code: string
-    frontmatter: {
-      [key: string]: any
-    }
+    settings: SlideSettings
     previousSlideNr?: number
     nextSlideNr?: number
   }
@@ -42,12 +44,24 @@ export const loader: LoaderFunction = async ({ params }): Promise<LoaderData> =>
 
   const mdx = await getMdx(slide.mdxContent)
 
-  return { slide: { ...slide, ...mdx }, numberOfSlides: slides.length, presentationSlug }
+  const settings = { verticalAlign: mdx.frontmatter.verticalAlign ?? 'center' }
+
+  console.log(settings)
+
+  return {
+    slide: {
+      ...slide,
+      code: mdx.code,
+      settings,
+    },
+    numberOfSlides: slides.length,
+    presentationSlug,
+  }
 }
 
 export default () => {
   const {
-    slide: { code, previousSlideNr, nextSlideNr, frontmatter },
+    slide: { code, previousSlideNr, nextSlideNr, settings },
     presentationSlug,
   } = useLoaderData<LoaderData>()
 
@@ -66,7 +80,7 @@ export default () => {
 
   return (
     <Fullscreen>
-      {frontmatter?.align === 'top' ? (
+      {settings.verticalAlign === 'top' ? (
         <VerticalAlignTop>
           <Slide code={code} />
         </VerticalAlignTop>
