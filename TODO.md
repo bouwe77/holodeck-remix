@@ -6,9 +6,9 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 - [ ] 🚸 Portal better navigation / routing
 
-- [ ] 🈁 Better layouts: All the children of a slide should be separate grid rows which have the height of their content. Then the `Center` and `Left` component only simply align the content, so you can use them everywhere, even as children.
-
 - [ ] 🔂 Only import presentation specific components, by passing the presentation name to the `getMdx` function.
+
+- [ ] 📦 Now you have to do imports in every file, because the slides are splitted, and each slide needs to have all imports. It would be nice to do all the imports once at the top of the MDX and then append these imports to all splitted slide strings, so it just works everwhere, whatever you do (or do not) import. I don't want to parse the MDX string to see which imports I need, it's all or nothing. Unless importing potentially unused things is a problem for MDX-Bundler. Specific imports per slide should also keep on working, so it's just appending. This could result in duplicate imports. If this isn't giving any errors, I am fine with this.
 
 ### Should Have
 
@@ -34,8 +34,6 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 - [ ] 🔥 Inline live coding (a la CodeSandbox), which persists the changes. Perhaps even an iframe is fine.
 
-- [ ] 📦 Now you have to do imports in every file, because the slides are splitted, and each slide needs to have all imports. It would be nice to do all the imports once at the top of the MDX and then append these imports to all splitted slide strings, so it just works everwhere, whatever you do (or do not) import. I don't want to parse the MDX string to see which imports I need, it's all or nothing. Unless importing potentially unused things is a problem for MDX-Bundler. Specific imports per slide should also keep on working, so it's just appending. This could result in duplicate imports. If this isn't giving any errors, I am fine with this.
-
 - [ ] 🎡 Theming by customizing CSS from the `slides` folder. Perhaps just add CSS file(s) to your presentation folder, which get noticed by the app, included in the links of the route, and then can override CSS classes defined in the default CSS?
 
 - [ ] 📸 How to add and render images in a presentation, other than with full URLs like I do now?
@@ -49,6 +47,14 @@ This is a list of all the ideas I have to further improve and expand this projec
 - [ ] 🐞 Read importable React components once, upon start of the app, instead of every time when navigating each slide. Or is this really necessary and/or not a problem?
 
 - [ ] 📱 Swipe to go to next/prev slide on mobile
+
+### Better layouts June - July 2022
+
+- [x] 🈁 Better layouts: Separate vertical alignment for a whole slide from horizontal alignment for specific parts of a slide
+- [x] `Center` and `Left` components for horizontally aligning specific parts of content within a slide.
+- [x] Use frontmatter for vertical alignment of the whole slide
+- [x] Temporarily (?) use ### as slide separator to avoid conflicts with frontmatter separator
+- [x] Temporary fix: Disable Prettier for `.md` and `.mdx` files in the `slides` folder, because it screws up frontmatter.
 
 ### Improvements End of May 2022 (DONE ✅)
 
