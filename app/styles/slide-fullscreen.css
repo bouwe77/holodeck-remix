@@ -10,17 +10,6 @@ body {
   min-height: 100vh;
 }
 
-.center {
-  display: grid;
-  place-items: center;
-}
-
-.center-content {
-  display: grid;
-  place-items: center;
-  grid-gap: 10px;
-}
-
 h1 {
   font-size: 10vh;
   color: #eee;
@@ -45,28 +34,31 @@ img {
   margin: 2vh;
 }
 
-.left {
+/* VerticalAlignCenter component */
+.center {
   display: grid;
-  grid-template-rows: 5% 1fr;
-  min-width: 130vh;
+  place-items: center;
 }
 
-.left-content {
+.center-content {
   display: grid;
-  grid-template-rows: 15% 1fr;
+  place-items: center;
+  grid-gap: 10px;
 }
 
+/* VerticalAlignTop component */
 .top {
   display: grid;
 }
 
+/* Center component */
 .content-align-center {
   display: grid;
   place-items: center;
 }
 
+/* Left component */
 .content-align-left {
   display: grid;
   place-items: start;
 }
-
