@@ -4,12 +4,7 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 ### Next Up
 
-- [ ] Refactoring:
-
-  - Check for unused CSS classes...
-  - ...
-
-- [ ] Fix alignment of preview slides again.
+- [ ] 🕵️‍♀️ Fix alignment of preview slides again.
 
 - [ ] 🔂 Only import presentation specific components, by passing the presentation name to the `getMdx` function.
 
@@ -31,7 +26,7 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 - [ ] 🌍 Add content for the presentation to display on the portal. Possible solution: Add an MDX file with a filename starting with underscore, so the portal displays this, and the presentation ignores it.
 
-- [ ] ⌗ Create `Columns` layout component which puts each child in a separate grid column.
+- [ ] #️⃣ Create `Columns` layout component which puts each child in a separate grid column.
 
 - [ ] 👩‍🏫 Speaker notes with `Notes` component which is only rendered in the portal. Perhaps the notes should be removed from the MDX when concateting/splitting slides, but in such a way they can be rendered in the portal.
 
@@ -58,10 +53,10 @@ This is a list of all the ideas I have to further improve and expand this projec
 ### Better layouts June - July 2022
 
 - [x] 🈁 Better layouts: Separate vertical alignment for a whole slide from horizontal alignment for specific parts of a slide
-- [x] `Center` and `Left` components for horizontally aligning specific parts of content within a slide.
-- [x] Use frontmatter for vertical alignment of the whole slide
-- [x] Temporarily (?) use ### as slide separator to avoid conflicts with frontmatter separator
-- [x] Temporary fix: Disable Prettier for `.md` and `.mdx` files in the `slides` folder, because it screws up frontmatter.
+- [x] 🈁 `Center` and `Left` components for horizontally aligning specific parts of content within a slide.
+- [x] 📜 Use frontmatter for vertical alignment of the whole slide
+- [x] #️⃣ Temporarily (?) use ### as slide separator to avoid conflicts with frontmatter separator
+- [x] 🧹 Temporary fix: Disable Prettier for `.md` and `.mdx` files in the `slides` folder, because it screws up frontmatter.
 
 ### Improvements End of May 2022 (DONE ✅)
 
