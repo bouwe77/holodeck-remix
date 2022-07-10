@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useLoaderData } from '@remix-run/react'
-import { LoaderFunction } from '@remix-run/node'
+import type { LoaderFunction } from '@remix-run/node'
 import { getMdx } from '~/server/mdx.server'
 import { getSlides } from '~/server/getSlides.server'
 import { useNavigate } from 'react-router-dom'
@@ -47,7 +47,7 @@ export const loader: LoaderFunction = async ({ params }): Promise<LoaderData> =>
 
 export default () => {
   const {
-    slide: { code, previousSlideNr, nextSlideNr },
+    slide: { code, previousSlideNr, nextSlideNr, frontmatter },
     presentationSlug,
   } = useLoaderData<LoaderData>()
 
@@ -66,7 +66,29 @@ export default () => {
 
   return (
     <Fullscreen>
-      <Slide code={code} />
+      {frontmatter?.align === 'top' ? (
+        <VerticalAlignTop>
+          <Slide code={code} />
+        </VerticalAlignTop>
+      ) : (
+        <VerticalAlignCenter>
+          <Slide code={code} />
+        </VerticalAlignCenter>
+      )}
     </Fullscreen>
+  )
+}
+
+const VerticalAlignTop = ({ children }) => {
+  return <div className="top">{children}</div>
+}
+
+const VerticalAlignCenter = ({ children }) => {
+  return (
+    <div className="container">
+      <div className="center">
+        <div className="center-content">{children}</div>
+      </div>
+    </div>
   )
 }

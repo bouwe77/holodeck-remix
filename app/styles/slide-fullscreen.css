@@ -55,3 +55,18 @@ img {
   display: grid;
   grid-template-rows: 15% 1fr;
 }
+
+.top {
+  display: grid;
+}
+
+.content-align-center {
+  display: grid;
+  place-items: center;
+}
+
+.content-align-left {
+  display: grid;
+  place-items: start;
+}
+
