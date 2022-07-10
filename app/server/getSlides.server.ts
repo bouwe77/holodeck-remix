@@ -31,7 +31,7 @@ export async function getSlides(presentationSlug: string): Promise<Slide[]> {
     mdxFiles.map(async (file) => {
       const filePath = Path.join(presentationFolder, file.name)
       const fileContents = await fs.readFile(filePath, 'utf8')
-      return fileContents.split('---')
+      return fileContents.split('###')
     }),
   )
 
@@ -40,7 +40,7 @@ export async function getSlides(presentationSlug: string): Promise<Slide[]> {
     .map((slide, index, slides) => {
       return {
         nr: index + 1,
-        mdxContent: slide,
+        mdxContent: slide.trim(),
         previousSlideNr: index === 0 ? null : index,
         nextSlideNr: index === slides.length - 1 ? null : index + 2,
       }

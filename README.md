@@ -7,7 +7,7 @@ An app for presenting your slide decks, which you write in Markdown or MDX in yo
 
 - Create multiple presentations within one project.
 - Write your presentation by creating one or more Markdown and/or MDX files.
-- Slides are separated with an `---`.
+- Slides are separated with an `###`.
 - A portal shows you an overview of all presentations and its slides.
 - Start a presentation in full screen mode and navigate through slides with your keyboard.
 - Slide content is aligned centered horizontally and vertically, unless you wrap it in a `<Left>content here</Left>` component.
@@ -31,7 +31,7 @@ Create your first presentation:
 - Add some text to that file, for example `# Welcome` and save.
 - Refresh the app in the browser, navigate to your presentation.
 - Click the "Start Presentation" button.
-- Add more slides in the same file by separating them with `---`.
+- Add more slides in the same file by separating them with `###`.
 - Or create another .md or .mdx file and add slides there.
 - Refresh the browser every time you change something to your slides.
 
