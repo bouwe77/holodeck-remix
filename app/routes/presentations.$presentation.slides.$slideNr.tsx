@@ -46,8 +46,6 @@ export const loader: LoaderFunction = async ({ params }): Promise<LoaderData> =>
 
   const settings = { verticalAlign: mdx.frontmatter.verticalAlign ?? 'center' }
 
-  console.log(settings)
-
   return {
     slide: {
       ...slide,
