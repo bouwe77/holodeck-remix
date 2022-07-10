@@ -1,5 +1,5 @@
 import { Outlet, useLoaderData } from '@remix-run/react'
-import { LoaderFunction } from '@remix-run/node'
+import type { LoaderFunction } from '@remix-run/node'
 import Header from '~/components/portal/Header'
 
 interface LoaderData {
