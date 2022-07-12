@@ -1,5 +1,5 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react'
-import { MetaFunction } from '@remix-run/react/routeModules'
+import type { MetaFunction } from '@remix-run/react/routeModules'
 
 import styles from '~/styles/global.css'
 
@@ -9,7 +9,7 @@ export function links() {
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
-  title: 'My Remix Slides',
+  title: 'Holodeck',
   viewport: 'width=device-width,initial-scale=1',
 })
 
