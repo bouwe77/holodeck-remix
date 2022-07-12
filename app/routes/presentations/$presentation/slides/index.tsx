@@ -26,7 +26,7 @@ export const loader = async ({ params }) => {
 
   const slidesWithMdx = await Promise.all(
     slides.map(async (slide) => {
-      const mdx = await getMdx(slide.mdxContent)
+      const mdx = await getMdx(presentationSlug, slide.mdxContent)
       return { ...slide, ...mdx, presentationSlug }
     }),
   )

@@ -28,9 +28,13 @@ const getComponentContents = async (filePaths: string[]) => {
   return components
 }
 
-export const getMdx = async (mdxSourceCode: string) => {
+export const getMdx = async (presentationSlug: string, mdxSourceCode: string) => {
   //TODO No need to read all these components with every request, so where to put this?
-  const componentPaths = [...getFiles(`${layoutComponentsFolder}/**/*.tsx`), ...getFiles(`${slidesFolder}/**/*.tsx`)]
+  const presentationFolder = Path.resolve(slidesFolder, presentationSlug)
+  const componentPaths = [
+    ...getFiles(`${layoutComponentsFolder}/**/*.tsx`),
+    ...getFiles(`${presentationFolder}/**/*.tsx`),
+  ]
   const components = await getComponentContents(componentPaths)
 
   const bundledMdx = await bundleMDX({

@@ -42,7 +42,7 @@ export const loader: LoaderFunction = async ({ params }): Promise<LoaderData> =>
     })
   }
 
-  const mdx = await getMdx(slide.mdxContent)
+  const mdx = await getMdx(presentationSlug, slide.mdxContent)
 
   const settings = { verticalAlign: mdx.frontmatter.verticalAlign ?? 'center' }
 
