@@ -1,4 +1,4 @@
-## TO DO 🔜
+# TO DO 🔜
 
 This is a list of all the ideas I have to further improve and expand this project:
 
@@ -26,7 +26,7 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 - [ ] #️⃣ Create `Columns` layout component which puts each child in a separate grid column.
 
-- [ ] 👩‍🏫 Speaker notes with `Notes` component which is only rendered in the portal. Perhaps the notes should be removed from the MDX when concateting/splitting slides, but in such a way they can be rendered in the portal.
+- [ ] 👩‍🏫 Speaker notes with `Notes` component which is only rendered in the portal. Perhaps the notes should be removed from the MDX when concatenating/splitting slides, but in such a way they can be rendered in the portal.
 
 - [ ] 💿 Make use of Remix' `CatchBoundary` and `ErrorBoundary` everywhere.
 
@@ -44,9 +44,11 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 - [ ] 🏎 Remix' prefetch intent thingy: So preload the next slide, before actually navigating to it.
 
-- [ ] 🐞 Read importable React components once, upon start of the app, instead of every time when navigating each slide. Or is this really necessary and/or not a problem?
+- [ ] 🐞 Read importable React components once, upon start of the app, instead of every time when navigating each slide. Check: Is this really necessary and/or even a problem how it works now?
 
 - [ ] 📱 Swipe to go to next/prev slide on mobile
+
+# DONE ✅
 
 ### Misc - July 2022
 
