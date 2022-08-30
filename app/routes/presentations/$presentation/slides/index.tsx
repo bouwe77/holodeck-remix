@@ -35,10 +35,8 @@ export const loader = async ({ params }) => {
 }
 
 const LinkToSlide = ({ children, url }) => {
-  const navigate = useNavigate()
-
   return (
-    <div className="link-to-slide" onClick={() => navigate(url)}>
+    <div className="link-to-slide" onClick={() => window.open(url, '_blank')}>
       {children}
     </div>
   )
