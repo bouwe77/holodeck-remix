@@ -36,7 +36,7 @@ export async function getSlides(presentationSlug: string): Promise<Slide[]> {
   )
 
   const allSlides = slidesPerFile
-    .reduce((acc, curr) => acc.concat(curr), [])
+    .reduce((acc, curr) => [...acc, ...curr])
     .map((slide, index, slides) => {
       return {
         nr: index + 1,
