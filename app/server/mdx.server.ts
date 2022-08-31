@@ -3,6 +3,7 @@ import Path from 'path'
 import { bundleMDX } from 'mdx-bundler'
 import { sync as getFiles } from 'glob'
 
+//TODO these folder paths are also in the getSlides, so put them somewhere central...
 const layoutComponentsFolder = Path.resolve(__dirname, '../app/components/slides/layout')
 const slidesFolder = Path.resolve(__dirname, '../slides')
 
@@ -29,11 +30,19 @@ const getComponentContents = async (filePaths: string[]) => {
 }
 
 export const getMdx = async (presentationSlug: string, mdxSourceCode: string) => {
-  //TODO No need to read all these components with every request, so where to put this?
   const presentationFolder = Path.resolve(slidesFolder, presentationSlug)
+
+  //TODO No need to read all these components with every request, so where to put this?
+
+  // Next to the MDX itself, also bundle the layout components, and every .js, .jsx, .ts., .tsx file
+  // in the presentation folder.
+  //TODO Make one pattern for these extensions so one call to getFiles is enough...
   const componentPaths = [
     ...getFiles(`${layoutComponentsFolder}/**/*.tsx`),
     ...getFiles(`${presentationFolder}/**/*.tsx`),
+    ...getFiles(`${presentationFolder}/**/*.ts`),
+    ...getFiles(`${presentationFolder}/**/*.js`),
+    ...getFiles(`${presentationFolder}/**/*.jsx`),
   ]
   const components = await getComponentContents(componentPaths)
 
