@@ -11,6 +11,7 @@ export type Presentation = {
 }
 
 const slidesFolder = Path.resolve(__dirname, '../slides')
+const layoutComponentsFolder = Path.resolve(__dirname, '../app/components/slides/layout')
 
 export async function getPresentations(): Promise<Presentation[]> {
   const files = await fs.readdir(slidesFolder)
@@ -20,12 +21,30 @@ export async function getPresentations(): Promise<Presentation[]> {
   return presentations
 }
 
+const getFilesByExtensions = async (folder: string, extensions: string[]) => {
+  return fs
+    .readdir(folder, { withFileTypes: true })
+    .then((files) => files.filter((file) => file.isFile() && extensions.includes(Path.extname(file.name))))
+}
+
 export async function getSlides(presentationSlug: string): Promise<Slide[]> {
   const presentationFolder = Path.join(slidesFolder, presentationSlug)
 
-  const mdxFiles = await fs
-    .readdir(presentationFolder, { withFileTypes: true })
-    .then((files) => files.filter((file) => file.isFile() && ['.mdx', '.md'].includes(Path.extname(file.name))))
+  // Generate default imports for .ts, .tsx, .js, .jsx, .json file
+  //TODO JSON, but is that a default or named import?
+  //TODO subfolders
+  const fileExtensionsToImport = ['.js', '.jsx', '.ts', '.tsx']
+  const layoutFilesToImport = await getFilesByExtensions(layoutComponentsFolder, fileExtensionsToImport)
+  const presentationFilesToImport = await getFilesByExtensions(presentationFolder, fileExtensionsToImport)
+  const filesToImport = [...layoutFilesToImport, ...presentationFilesToImport]
+  const defaultImports = filesToImport
+    .map((f) => {
+      const name = Path.parse(f.name).name
+      return `import ${name} from './${name}'`
+    })
+    .join('\n')
+
+  const mdxFiles = await getFilesByExtensions(presentationFolder, ['.mdx', '.md'])
 
   const slidesPerFile = await Promise.all(
     mdxFiles.map(async (file) => {
@@ -40,7 +59,8 @@ export async function getSlides(presentationSlug: string): Promise<Slide[]> {
     .map((slide, index, slides) => {
       return {
         nr: index + 1,
-        mdxContent: slide.trim(),
+        //TODO add imports AFTER the frontmatter
+        mdxContent: defaultImports + '\n\n' + slide.trim(),
         previousSlideNr: index === 0 ? null : index,
         nextSlideNr: index === slides.length - 1 ? null : index + 2,
       }
