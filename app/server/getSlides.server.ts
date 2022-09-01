@@ -31,16 +31,16 @@ export async function getSlides(presentationSlug: string): Promise<Slide[]> {
   const presentationFolder = Path.join(slidesFolder, presentationSlug)
 
   // Generate default imports for .ts, .tsx, .js, .jsx, .json file
-  //TODO JSON, but is that a default or named import?
   //TODO subfolders
-  const fileExtensionsToImport = ['.js', '.jsx', '.ts', '.tsx']
+  const fileExtensionsToImport = ['.js', '.jsx', '.ts', '.tsx', '.json']
   const layoutFilesToImport = await getFilesByExtensions(layoutComponentsFolder, fileExtensionsToImport)
   const presentationFilesToImport = await getFilesByExtensions(presentationFolder, fileExtensionsToImport)
   const filesToImport = [...layoutFilesToImport, ...presentationFilesToImport]
   const defaultImports = filesToImport
     .map((f) => {
-      const name = Path.parse(f.name).name
-      return `import ${name} from './${name}'`
+      const parsedFilename = Path.parse(f.name)
+      const module = parsedFilename.ext === '.json' ? parsedFilename.base : parsedFilename.name
+      return `import ${parsedFilename.name} from './${module}'`
     })
     .join('\n')
 

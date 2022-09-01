@@ -43,6 +43,7 @@ export const getMdx = async (presentationSlug: string, mdxSourceCode: string) =>
     ...getFiles(`${presentationFolder}/**/*.ts`),
     ...getFiles(`${presentationFolder}/**/*.js`),
     ...getFiles(`${presentationFolder}/**/*.jsx`),
+    ...getFiles(`${presentationFolder}/**/*.json`),
   ]
   const components = await getComponentContents(componentPaths)
 
