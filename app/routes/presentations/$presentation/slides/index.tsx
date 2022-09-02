@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate } from '@remix-run/react'
+import { useLoaderData } from '@remix-run/react'
 import Preview from '~/components/slides/Preview'
 import { Slide } from '~/components/slides/Slide'
 import { getSlides } from '~/server/getSlides.server'
