@@ -61,7 +61,12 @@ const getImports = (content: string) => {
   // Add layout imports.
   // TODO Make this dynamic by default importing every .tsx from the layouts folder?
   // If so, then also move that loic out of here, because it only needs to be done once, and not per MD/MDX file.
-  const imports = ["import Center from './Center'", "import Left from './Left'"]
+  const imports = [
+    "import Top from './Top'",
+    "import Middle from './Middle'",
+    "import Center from './Center'",
+    "import Left from './Left'",
+  ]
 
   // Gather all imports from the first lines of the content, until something else than an import is found.
   for (const line of lines) {
