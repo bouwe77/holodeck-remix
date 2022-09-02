@@ -37,6 +37,8 @@ export const loader: LoaderFunction = async ({ params }): Promise<LoaderData> =>
     })
   }
 
+  console.log(slide.mdxContent)
+
   const mdx = await getMdx(presentationSlug, slide.mdxContent)
 
   return {
