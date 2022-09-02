@@ -1,22 +1,3 @@
-/**
- * - Ik ga alle imports bovenin de MDX globaal maken, dus aan elke slide toevoegen.
- * - Imports elders in de MDX, dus in specifieke slides, laat ik staan. Als dat misgaan dan
- *   moeten ze dat zelf maar oplossen, want imports per slide is raar. Als het toevallig wel
- *   werkt (niet conflicteert) dan is dat mooi meegenomen.
- *
- * - Bij inlezen van een MDX file:
- *   1. Begint de file met een import?
- *   2. Zo nee, voeg nergens imports toe.
- *   3. Zo ja, vanaf de eerste import tot de laatste, dus totdat je een regel met iets anders
- *      dan imports tegenkomt: Onthoud deze en zet ze bovenaan ELKE slide.
- *
- *   Andere requirements:
- *   - MDX zo clean mogelijk houden.
- *   - MDX zoveel mogelijk gebruiken zoals het hoort, zodat het geldige MDX is.
- *   - Frontmatter: Moet helemaal bovenaan de MDX staan, nog voor imports en content. Dus dat doe ik nu fout.
- *   - Kortom, misschien toch maar vertical alignment in JSX oplossen...
- */
-
 import fs from 'fs/promises'
 import Path from 'path'
 
