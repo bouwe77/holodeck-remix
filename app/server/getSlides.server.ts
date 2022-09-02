@@ -1,3 +1,22 @@
+/**
+ * - Ik ga alle imports bovenin de MDX globaal maken, dus aan elke slide toevoegen.
+ * - Imports elders in de MDX, dus in specifieke slides, laat ik staan. Als dat misgaan dan
+ *   moeten ze dat zelf maar oplossen, want imports per slide is raar. Als het toevallig wel
+ *   werkt (niet conflicteert) dan is dat mooi meegenomen.
+ *
+ * - Bij inlezen van een MDX file:
+ *   1. Begint de file met een import?
+ *   2. Zo nee, voeg nergens imports toe.
+ *   3. Zo ja, vanaf de eerste import tot de laatste, dus totdat je een regel met iets anders
+ *      dan imports tegenkomt: Onthoud deze en zet ze bovenaan ELKE slide.
+ *
+ *   Andere requirements:
+ *   - MDX zo clean mogelijk houden.
+ *   - MDX zoveel mogelijk gebruiken zoals het hoort, zodat het geldige MDX is.
+ *   - Frontmatter: Moet helemaal bovenaan de MDX staan, nog voor imports en content. Dus dat doe ik nu fout.
+ *   - Kortom, misschien toch maar vertical alignment in JSX oplossen...
+ */
+
 import fs from 'fs/promises'
 import Path from 'path'
 
@@ -22,49 +41,42 @@ export async function getPresentations(): Promise<Presentation[]> {
 }
 
 const getFilesByExtensions = async (folder: string, extensions: string[]) => {
-  return fs
-    .readdir(folder, { withFileTypes: true })
-    .then((files) => files.filter((file) => file.isFile() && extensions.includes(Path.extname(file.name))))
+  const filesInFolder = await fs.readdir(folder, { withFileTypes: true })
+
+  const filesWithExtensions = filesInFolder
+    .filter((file) => file.isFile() && extensions.includes(Path.extname(file.name)))
+    .map((file) => Path.join(folder, file.name))
+
+  return filesWithExtensions
+}
+
+const getFileContents = async (filePath: string) => {
+  const fileContents = await fs.readFile(filePath, 'utf8')
+  return fileContents
 }
 
 export async function getSlides(presentationSlug: string): Promise<Slide[]> {
-  const presentationFolder = Path.join(slidesFolder, presentationSlug)
+  const presentationFolderPath = Path.join(slidesFolder, presentationSlug)
+  const mdAndMdxFilePaths = await getFilesByExtensions(presentationFolderPath, ['.md', '.mdx'])
 
-  // Generate default imports for .ts, .tsx, .js, .jsx, .json file
-  //TODO subfolders
-  const fileExtensionsToImport = ['.js', '.jsx', '.ts', '.tsx', '.json']
-  const layoutFilesToImport = await getFilesByExtensions(layoutComponentsFolder, fileExtensionsToImport)
-  const presentationFilesToImport = await getFilesByExtensions(presentationFolder, fileExtensionsToImport)
-  const filesToImport = [...layoutFilesToImport, ...presentationFilesToImport]
-  const defaultImports = filesToImport
-    .map((f) => {
-      const parsedFilename = Path.parse(f.name)
-      const module = parsedFilename.ext === '.json' ? parsedFilename.base : parsedFilename.name
-      return `import ${parsedFilename.name} from './${module}'`
-    })
-    .join('\n')
-
-  const mdxFiles = await getFilesByExtensions(presentationFolder, ['.mdx', '.md'])
-
-  const slidesPerFile = await Promise.all(
-    mdxFiles.map(async (file) => {
-      const filePath = Path.join(presentationFolder, file.name)
-      const fileContents = await fs.readFile(filePath, 'utf8')
+  const allSlidesContent = await Promise.all(
+    mdAndMdxFilePaths.map(async (file) => {
+      const fileContents = await getFileContents(file)
       return fileContents.split('###')
     }),
-  )
+  ).then((stuff) => stuff.reduce((acc, curr) => [...acc, ...curr]))
 
-  const allSlides = slidesPerFile
-    .reduce((acc, curr) => [...acc, ...curr])
-    .map((slide, index, slides) => {
-      return {
-        nr: index + 1,
-        //TODO add imports AFTER the frontmatter
-        mdxContent: defaultImports + '\n\n' + slide.trim(),
-        previousSlideNr: index === 0 ? null : index,
-        nextSlideNr: index === slides.length - 1 ? null : index + 2,
-      }
-    })
+  const defaultImports = '{/* todo... */}'
 
-  return allSlides
+  const allSlidesContentAndMetadata = allSlidesContent.map((slide, index, slides) => {
+    return {
+      nr: index + 1,
+      //TODO add imports AFTER the frontmatter
+      mdxContent: defaultImports + '\n\n' + slide.trim(),
+      previousSlideNr: index === 0 ? null : index,
+      nextSlideNr: index === slides.length - 1 ? null : index + 2,
+    }
+  })
+
+  return allSlidesContentAndMetadata
 }
