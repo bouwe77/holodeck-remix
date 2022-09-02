@@ -13,14 +13,9 @@ export function links() {
   return [{ rel: 'stylesheet', href: styles }]
 }
 
-type SlideSettings = {
-  verticalAlign: 'top' | 'center'
-}
-
 export type LoaderData = {
   slide: {
     code: string
-    settings: SlideSettings
     previousSlideNr?: number
     nextSlideNr?: number
   }
@@ -44,13 +39,10 @@ export const loader: LoaderFunction = async ({ params }): Promise<LoaderData> =>
 
   const mdx = await getMdx(presentationSlug, slide.mdxContent)
 
-  const settings = { verticalAlign: mdx.frontmatter.verticalAlign ?? 'center' }
-
   return {
     slide: {
       ...slide,
       code: mdx.code,
-      settings,
     },
     numberOfSlides: slides.length,
     presentationSlug,
@@ -59,7 +51,7 @@ export const loader: LoaderFunction = async ({ params }): Promise<LoaderData> =>
 
 export default () => {
   const {
-    slide: { code, previousSlideNr, nextSlideNr, settings },
+    slide: { code, previousSlideNr, nextSlideNr },
     presentationSlug,
   } = useLoaderData<LoaderData>()
 
@@ -76,9 +68,11 @@ export default () => {
 
   useKeyboardNavigation(goToNextSlide, goToPreviousSlide)
 
+  const alignTop = false
+
   return (
     <Fullscreen>
-      {settings.verticalAlign === 'top' ? (
+      {alignTop ? (
         <VerticalAlignTop>
           <Slide code={code} />
         </VerticalAlignTop>
