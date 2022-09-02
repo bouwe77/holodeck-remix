@@ -6,8 +6,6 @@ This is a list of all the ideas I have to further improve and expand this projec
 
 - [ ] 🕵️‍♀️ Fix alignment of preview slides again.
 
-- [ ] 📦 Now you have to do imports in every file, because the slides are splitted, and each slide needs to have all imports. It would be nice to do all the imports once at the top of the MDX and then append these imports to all splitted slide strings, so it just works everwhere, whatever you do (or do not) import. I don't want to parse the MDX string to see which imports I need, it's all or nothing. Unless importing potentially unused things is a problem for MDX-Bundler. Specific imports per slide should also keep on working, so it's just appending. This could result in duplicate imports. If this isn't giving any errors, I am fine with this.
-
 ### Should Have
 
 - [ ] 🚸 Portal better navigation / routing
@@ -49,6 +47,11 @@ This is a list of all the ideas I have to further improve and expand this projec
 - [ ] 📱 Swipe to go to next/prev slide on mobile
 
 # DONE ✅
+
+### September 2022
+
+- [ ] 🈁 Replace defining vertical alignment through frontmatter with just using components in JSX
+- [x] 📦 Imports at the top of the MDX are automatically added to every (splitted) slide of that MDX.
 
 ### Misc - July 2022
 
