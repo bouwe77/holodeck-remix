@@ -55,28 +55,46 @@ const getFileContents = async (filePath: string) => {
   return fileContents
 }
 
+const getImports = (content: string) => {
+  const lines = content.split('\n')
+
+  // Add layout imports.
+  // TODO Make this dynamic by default importing every .tsx from the layouts folder?
+  // If so, then also move that loic out of here, because it only needs to be done once, and not per MD/MDX file.
+  const imports = ["import Center from './Center'", "import Left from './Left'"]
+
+  // Gather all imports from the first lines of the content, until something else than an import is found.
+  for (const line of lines) {
+    const trimmedLine = line.trim()
+    if (trimmedLine.startsWith('import ')) imports.push(line)
+    else if (trimmedLine !== '') break
+  }
+
+  return imports.join('\n')
+}
+
 export async function getSlides(presentationSlug: string): Promise<Slide[]> {
   const presentationFolderPath = Path.join(slidesFolder, presentationSlug)
   const mdAndMdxFilePaths = await getFilesByExtensions(presentationFolderPath, ['.md', '.mdx'])
+  const mdAndMdxFileContents = await Promise.all(mdAndMdxFilePaths.map(async (path) => await getFileContents(path)))
 
-  const allSlidesContent = await Promise.all(
-    mdAndMdxFilePaths.map(async (file) => {
-      const fileContents = await getFileContents(file)
-      return fileContents.split('###')
-    }),
-  ).then((stuff) => stuff.reduce((acc, curr) => [...acc, ...curr]))
-
-  const defaultImports = '{/* todo... */}'
-
-  const allSlidesContentAndMetadata = allSlidesContent.map((slide, index, slides) => {
-    return {
-      nr: index + 1,
-      //TODO add imports AFTER the frontmatter
-      mdxContent: defaultImports + '\n\n' + slide.trim(),
-      previousSlideNr: index === 0 ? null : index,
-      nextSlideNr: index === slides.length - 1 ? null : index + 2,
-    }
-  })
+  const allSlidesContentAndMetadata = mdAndMdxFileContents
+    .map((fileContents) => {
+      const splittedSlideContent = fileContents.split('###').map((s) => s.trim())
+      const imports = getImports(splittedSlideContent[0])
+      return splittedSlideContent.map((slideContent, index) =>
+        index === 0 ? slideContent : imports + '\n\n' + slideContent,
+      )
+    })
+    .reduce((acc, curr) => [...acc, ...curr])
+    .map((slideContent, index, slides) => {
+      return {
+        nr: index + 1,
+        mdxContent: slideContent,
+        previousSlideNr: index === 0 ? null : index,
+        nextSlideNr: index === slides.length - 1 ? null : index + 2,
+      }
+    })
 
   return allSlidesContentAndMetadata
 }
