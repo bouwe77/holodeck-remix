@@ -83,7 +83,7 @@ export async function getSlides(presentationSlug: string): Promise<Slide[]> {
 
   const allSlidesContentAndMetadata = mdAndMdxFileContents
     .map((fileContents) => {
-      const splittedSlideContent = fileContents.split('###').map((s) => s.trim())
+      const splittedSlideContent = fileContents.split('---').map((s) => s.trim())
 
       const presentationImports = getPresentationImports(splittedSlideContent[0])
       return splittedSlideContent.map((slideContent, index) =>

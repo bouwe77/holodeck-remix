@@ -51,6 +51,7 @@ This is a list of all the ideas I have to further improve and expand this projec
 ### September 2022
 
 - [ ] 🈁 Replace defining vertical alignment through frontmatter with just using components in JSX
+- [x] #️⃣ Use --- as slide separator again now that frontmatter is not used anymore
 - [x] 📦 Imports at the top of the MDX are automatically added to every (splitted) slide of that MDX.
 
 ### Misc - July 2022
