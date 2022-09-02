@@ -51,21 +51,35 @@ Left aligned content
 </Left>
 ```
 
-_Vertically_ aligning content applies to a single (but whole) slide and is done through frontmatter:
+For _vertically_ aligning content use the `Top` or `Middle` components:
 
 ```
-Center is default
+Middle is default
 
 ###
 
----
-verticalAlign: top
----
+<Top />
 
 But this one is going to the top!
 ```
 
-By default the content is vertically aligned centered, so in practice you will only define top alignment.
+You can also render the content as a child of these components, but the effect is the same:
+
+```
+<Top>
+But this one is going to the top!
+</Top>
+```
+
+If you use both of these components in the same slide, the last one takes presedence:
+
+```
+<Middle />
+<Top />
+But this one is <i>still</i> going to the top!
+```
+
+By default, the content is vertically aligned to the middle, so in practice you will only define top alignment.
 
 ## Importing modules in your slides
 
