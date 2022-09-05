@@ -8,6 +8,8 @@ import useKeyboardNavigation from '~/components/slides/useKeyboardNavigation'
 import Fullscreen from '~/components/slides/Fullscreen'
 import { Slide } from '~/components/slides/Slide'
 import styles from '~/styles/slide-fullscreen.css'
+import VerticalAlign from '~/components/slides/VerticalAlign'
+import Wrapper from '~/components/slides/Wrapper'
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }]
@@ -63,6 +65,7 @@ export default () => {
     if (!nextSlideNr) return
     navigate(`/presentations/${presentationSlug}/slides/${nextSlideNr}`)
   }, [navigate, nextSlideNr, presentationSlug])
+
   const goToPreviousSlide = React.useCallback(() => {
     if (!previousSlideNr) return
     navigate(`/presentations/${presentationSlug}/slides/${previousSlideNr}`)
@@ -70,33 +73,11 @@ export default () => {
 
   useKeyboardNavigation(goToNextSlide, goToPreviousSlide)
 
-  const alignTop = false
-
   return (
-    <Fullscreen>
-      {alignTop ? (
-        <VerticalAlignTop>
-          <Slide code={code} />
-        </VerticalAlignTop>
-      ) : (
-        <VerticalAlignCenter>
-          <Slide code={code} />
-        </VerticalAlignCenter>
-      )}
-    </Fullscreen>
-  )
-}
-
-const VerticalAlignTop = ({ children }) => {
-  return <div className="top">{children}</div>
-}
-
-const VerticalAlignCenter = ({ children }) => {
-  return (
-    <div className="container">
-      <div className="center">
-        <div className="center-content">{children}</div>
-      </div>
-    </div>
+    <Wrapper>
+      <Fullscreen>
+        <Slide code={code} />
+      </Fullscreen>
+    </Wrapper>
   )
 }

@@ -38,7 +38,12 @@ const getFileContents = async (filePath: string) => {
 
 // TODO Make this dynamic by default importing every .tsx from the layouts folder?
 // If so, then also move that loic out of here, because it only needs to be done once, and not per MD/MDX file.
-const layoutImports = ["import Top from './Top'", "import Center from './Center'", "import Left from './Left'"]
+const layoutImports = [
+  "import Top from './Top'",
+  "import Middle from './Middle'",
+  "import Center from './Center'",
+  "import Left from './Left'",
+]
   .join('\n')
   .concat('\n\n')
 

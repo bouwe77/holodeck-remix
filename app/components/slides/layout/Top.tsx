@@ -1,6 +1,9 @@
-//TODO Also support children
-const Top = () => {
-  return null
-}
+import React from 'react'
+import { useChangeVerticalAlignment } from '../VerticalAlignmentContext'
 
-export default Top
+export default function Top({ children }) {
+  useChangeVerticalAlignment('top')
+
+  if (!children) return null
+  return <>{children}</>
+}

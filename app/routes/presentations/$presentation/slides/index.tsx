@@ -1,6 +1,7 @@
 import { useLoaderData } from '@remix-run/react'
 import Preview from '~/components/slides/Preview'
 import { Slide } from '~/components/slides/Slide'
+import Wrapper from '~/components/slides/Wrapper'
 import { getSlides } from '~/server/getSlides.server'
 import { getMdx } from '~/server/mdx.server'
 import styles from '~/styles/slide-preview.css'
@@ -54,9 +55,11 @@ export default function Index() {
       <div className="slides">
         {slides.map((slide) => (
           <LinkToSlide key={slide.nr} url={`/presentations/${slide.presentationSlug}/slides/${slide.nr}`}>
-            <Preview>
-              <Slide code={slide.code} />
-            </Preview>
+            <Wrapper>
+              <Preview>
+                <Slide code={slide.code} />
+              </Preview>
+            </Wrapper>
           </LinkToSlide>
         ))}
       </div>
