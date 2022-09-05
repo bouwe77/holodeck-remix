@@ -71,11 +71,11 @@ But this one is going to the top!
 </Top>
 ```
 
-If you use both of these components in the same slide, the last one takes presedence:
+If you use both of these components in the same slide, the first one takes presedence:
 
 ```
-<Middle />
 <Top />
+<Middle />
 But this one is <i>still</i> going to the top!
 ```
 
