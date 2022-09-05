@@ -85,55 +85,31 @@ By default, the content is vertically aligned to the middle, so in practice you 
 
 Modules can only be imported and/or used in `.mdx` presentation files.
 
-There are 3 ways to use modules in your slides. Pick the one that suits your needs, or even combine all 3 ways for ultimate flexibility.
+There are 2 ways to import modules in your slides, which you can also combine:
 
-### 1. Automatic imports
+### 1. Imports at the top of the MDX
 
-In the presentation folder, all `.ts`, `.tsx`, `.js`, and `.jsx` modules are automatically imported, so they can be used in every slide.
-However, only _default exports_ from these files are imported.
-
-For example, the `slides` folder contains `"my presentation"` with `slides.mdx` containing your slides, and some TypeScript files:
+In this MDX, the imports are at the top of the file, meaning they will be available for all slides:
 
 ```
-/slides
-   /my presentation
-      calc.ts
-      MyComponent.tsx
-      slides.mdx
-```
+import { data } from './my-data.json'
+import Counter from './Counter'
 
-In `slides.mdx` you can now use the default exports from `calc.ts` and `MyComponent.tsx`:
+# Check this out: A counter component!
 
-```
-# My first slide
-
-{calc.add(1, 2)}
-
-<MyComponent />
-```
-
-Which will render:
+<Counter />
 
 ---
 
-**My First Slide**
+# Second slide
 
-3
+Their name is: {data.people[3].name}
 
-Hello from My Component
+And here is the cool component again:
 
----
-
-What happens under the hood is for every file in the folder, except for .md and .mdx, default imports are done:
+<Counter />
 
 ```
-import calc from './calc'
-import MyComponent from './MyComponent'
-```
-
-Note the name of the import is always the same as the file.
-
-If you need more control, for example named imports, or specific imports per slide, you can also import in the slides MDX:
 
 ### 2. Manually importing per slide
 
@@ -146,48 +122,12 @@ import Counter from './Counter'
 
 ---
 
-import Counter, { stuff } from './stuff'
+import { stuff } from './stuff'
 
 {stuff}
 
 <Counter />
 ```
-
-The benefit of importing like this is that it's very explicit, and it might be necessary if you want to import the same name from different modules, as you see in the example.
-
-### 3. Manually importing for all slides
-
-You can also import manually, and then use the imported things in every slide of your presentation.
-
-In your MDS you need to add an empty slide, only containing imports. These imports will then be applied to every slide, but the empty slide containing the imports will not make it in the actual presentation, as it's just an import placeholder.
-
-In this example you see a slide only containing a few imports, and other slides using the imported things:
-
-```
-import { random } from './utils'
-import Counter, ImprovedCounter from './Counters'
-
----
-
-This is a Counter:
-
-<Counter />
-
----
-
-This counter is better:
-
-<ImprovedCounter number={random()} />
-
----
-
-Here they are together:
-
-<Counter />
-<ImprovedCounter number={42} />
-```
-
-This will result in a presentation with 3 slides where the imported stuff at the top is used everywhere, because they are imported in every slide.
 
 # Roadmap
 
