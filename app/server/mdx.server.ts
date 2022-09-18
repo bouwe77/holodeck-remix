@@ -33,6 +33,10 @@ export const getMdx = async (presentationSlug: string, mdxSourceCode: string) =>
   const presentationFolder = Path.resolve(slidesFolder, presentationSlug)
 
   //TODO No need to read all these components with every request, so where to put this?
+ 
+ //TODO Although ts(x) is used, TS does not work yet as soon as you use types.
+ // Maybe this gives some inspiration? https://www.canrau.com/en/remix-mdx-bundler-and-images
+ // Perhaps do a POC with this, could be how I bundle the files here is totally wrong...
 
   // Next to the MDX itself, also bundle the layout components, and every .js, .jsx, .ts., .tsx file
   // in the presentation folder.
