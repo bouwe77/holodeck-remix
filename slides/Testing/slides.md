@@ -1,4 +1,48 @@
+
+
+Problem: Manual tests are done by humans
+
 ---
+
+Humans can be busy, forgetting, tired, inexperienced, unaware, lazy, careless, too familiar, assuming, etc , etc. 
+
+---
+
+Advantage: Manual tests are done by humans
+
+---
+
+UI/UX, colors, typography, thinking out of the box, monkey testing
+
+---
+
+Manual tests are invaluable
+
+---
+
+Manual vs automated tests?
+
+- Ratio
+
+- Criteria
+
+Ratio depends on criteria 
+
+---
+
+Criteria 
+
+- Time
+
+- Suitability 
+
+- Quality 
+
+- Tooling and skills
+
+---
+
+Next steps
 
 - Write regression scripts for manual testing 
 
@@ -14,5 +58,5 @@
 
 - Payment
 
-- Untested things because hard to automate
+- Untested things because they are hard to automate
 
