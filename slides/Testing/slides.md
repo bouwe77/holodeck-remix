@@ -1,3 +1,13 @@
+Losse gedachtes: 
+
+- What, not how
+- Mindset
+- Slager eigen vlees keuren
+- Eerst UAT instructions schrijven
+- Discussies, docs enz. nalezen
+
+---
+
 Let's talk about testing
 
 ---
