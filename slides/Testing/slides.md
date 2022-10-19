@@ -1,10 +1,48 @@
+Let's talk about testing
 
+---
+
+I like testing
+
+---
+
+How we test (frontend)
+
+- Unit, integration, E2E
+
+- Pyramid vs Diamond
+
+---
+
+Problem/challenges with our (frontend) tests
+
+- Mocking
+
+- No E2E
+
+- UI/UX, graphics
+
+- Devices, browsers
+
+---
+
+Which is why we test manually as well
+
+---
 
 Problem: Manual tests are done by humans
 
 ---
 
 Humans can be busy, forgetting, tired, inexperienced, unaware, lazy, careless, too familiar, assuming, etc , etc. 
+
+---
+
+Consequence
+
+- Coverage
+
+- Inconsistency
 
 ---
 
