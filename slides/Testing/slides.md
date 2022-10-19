@@ -52,7 +52,9 @@ Consequence
 
 - Coverage
 
-- Inconsistency
+- Consistency
+
+- Repetitiveness 
 
 ---
 
@@ -65,6 +67,12 @@ UI/UX, colors, typography, thinking out of the box, monkey testing
 ---
 
 Manual tests are invaluable
+
+---
+
+- Problems of manual testing can be solved with automation
+
+- Focus of manual testing should be less on on "does it even work", but mainly on the things I just mentioned that are the strong points of humans...
 
 ---
 
