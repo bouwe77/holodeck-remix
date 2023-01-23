@@ -10,19 +10,21 @@
 
 ## This is NOT my actual conference talk
 
-## It's a summary
-
-### (feedback: is it interesting? missing anything?)
+### it's a summary
 
 ---
 
-# Personal experience
+# Feedback please
+
+### is it interesting? missing anything?
 
 ---
 
 # Content creation / knowledge sharing
 
-### Blogging, presenting, streaming, podcasting, Slack, Twitter, etc.
+---
+
+# Personal experience
 
 ---
 
@@ -32,7 +34,7 @@
 
 # Target audience
 
-### People who think they might wanna start 
+### people who think they might wanna start 
 
 ### (or do more) content creation
 
@@ -44,69 +46,77 @@
 
 ---
 
-# Content I create(d)
+# The content I create(d)
 
 ---
 
 # Why content creation?
 
-- Helps learning
+## - Helps learning
 
-- Communication
+## - Communication
 
-- Career
+## - Career
 
-- Fun!
+## - Fun!
 
 ---
 
 # Scary
 
-#### (absolutely, but find/start the way that works for you)
+#### absolutely, but find/start the way that works for you
 
 ---
 
 # Time
 
-#### (ask your employer, keep it small, fun > time)
+#### ask your employer, keep it small, fun > time
 
 ---
 
 # It has already been done before
 
-#### (every person, and their explanation, is unique 🫶)
+#### every person, and their style and explanation, is unique 🫶
 
 ---
 
 # I am not an expert
 
-#### (you will become one sooner by starting content creation right now, don't wait)
-
----
-
-# Opinions vs Facts
-
----
-
-# Audience / expectation management
-
-#### (people you know, tell them you are learning)
+#### you will become one sooner by starting content creation right now, don't wait
 
 ---
 
 # The curse of (expert) knowledge
 
-#### (can you still put yourself in the position of your audience?)
+#### can you still put yourself in the position of your audience?
 
 ---
 
-# For WHO are creating content?
-
-#### (for yourself perhaps?)
+# Opinions, knowledge, facts, 
 
 ---
 
-iets over vanuit de content CONSUMER bekeken: Hoe is het voor hun om jouw content te consumeren als je dit doet zoals ik adviseer. (opname beluisteren)
+# Be creative and yourself
+
+### yeah right... 🤨
+
+---
+
+# For WHO are you creating content?
+
+#### for yourself in the first place perhaps?
+
+---
+
+# Audience / expectation management
+
+#### people you know, tell them you are learning
+
+---
+
+# The content CONSUMER
+
+#### what it's like for them, consuming your beginner content?
 
 ---
 
