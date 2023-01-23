@@ -8,9 +8,11 @@
 
 ---
 
-# Feedback 🙏🏻
+## This is NOT my actual conference talk
 
-### (is it interesting? missing anything?)
+## It's a summary
+
+### (feedback: is it interesting? missing anything?)
 
 ---
 
@@ -18,7 +20,7 @@
 
 ---
 
-# Content creation
+# Content creation / knowledge sharing
 
 ### Blogging, presenting, streaming, podcasting, Slack, Twitter, etc.
 
@@ -33,6 +35,16 @@
 ### People who think they might wanna start 
 
 ### (or do more) content creation
+
+---
+
+# Being a developer is pretty special
+
+### regarding knowledge sharing and content creation
+
+---
+
+# Content I create(d)
 
 ---
 
@@ -56,7 +68,7 @@
 
 # Time
 
-#### (ask your empoyer, keep it small, fun > time)
+#### (ask your employer, keep it small, fun > time)
 
 ---
 
@@ -91,6 +103,10 @@
 # For WHO are creating content?
 
 #### (for yourself perhaps?)
+
+---
+
+iets over vanuit de content CONSUMER bekeken: Hoe is het voor hun om jouw content te consumeren als je dit doet zoals ik adviseer. (opname beluisteren)
 
 ---
 
