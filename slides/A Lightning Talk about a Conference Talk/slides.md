@@ -22,6 +22,8 @@
 
 # Content creation / knowledge sharing
 
+### for developers
+
 ---
 
 # Personal experience
@@ -32,51 +34,39 @@
 
 ---
 
-# Target audience
+## for developers who
 
-### people who think they might wanna start 
+- want to start with
+- want to do more
+- don't know yet
 
-### (or do more) content creation
+## content creation
 
 ---
 
 # Being a developer is pretty special
 
-### regarding knowledge sharing and content creation
+### content creation on the side
 
 ---
-
-# The content I create(d)
-
----
+[.build-lists: true]
 
 # Why content creation?
 
-## - Helps learning
+- Helps learning
+  explaining/understanding > just making it work
 
-## - Communication
+- Soft skills
 
-## - Career
+- Career
 
-## - Fun!
+- Fun!
 
 ---
 
 # Scary
 
 #### absolutely, but find/start the way that works for you
-
----
-
-# Time
-
-#### ask your employer, keep it small, fun > time
-
----
-
-# It has already been done before
-
-#### every person, and their style and explanation, is unique 🫶
 
 ---
 
@@ -92,19 +82,27 @@
 
 ---
 
-# Opinions, knowledge, facts, 
+# It has already been done before
+
+#### every person, your way of explaining, your style... 
+
+### Everyone is unique! 🫶
 
 ---
 
-# Be creative and yourself
+# Opinions...
 
-### yeah right... 🤨
+---
+
+# Be creative and be yourself...
+
+#### find what intrinsically motivates you
 
 ---
 
 # For WHO are you creating content?
 
-#### for yourself in the first place perhaps?
+#### for yourself, and people you know
 
 ---
 
@@ -114,14 +112,75 @@
 
 ---
 
-# The content CONSUMER
+# The content consumer
 
-#### what it's like for them, consuming your beginner content?
+#### what is it like for them, consuming your beginner content?
+
+---
+[.build-lists: true]
+
+# How to start?
+
+- KISS
+
+- Note taking => Blogging
+
+- Twitter/Slack => Blogging
+
+- Blogging -> Audio or video
+
+- Streaming => Presenting
 
 ---
 
-## **OK** thanks **bye**
+# Whatever you do 
+
+## (or don't do)
+
+# is fine
 
 ---
+
+# Also because:
+
+## the biggest challenge is...
+
+---
+
+# Time
+
+#### ask your employer, keep it small, fun > time
+
+---
+
+# **don't overestimate content creation**
+
+> 
+
+# **don't underestimate** yourself ❤️
+
+---
+
+# So yeah...
+
+## WDYT?
+
+---
+
+# **OK** thanks **bye**
+
+---
+
+(slide intentionally left blank)
+
+---
+
+# Notes/feedback
+
+- Examples of creative/simple/inspiring content creation both my own and from others
+- Everyone is a content creator. Dus publiek vragen wie beschouwt zichzelf als content creator, en dan voorbeelden waarom iedereen misschien wel content creëert.
+- Bij mij was het een soort bewustwording/besluit. Een doel, of eigenlijk een middel.
+- Voorbeelden noemen waarover ik nog content wil creëeren, want: Hoe zit dat eigenlijk?
+- Bestaat er zoiets als echt slechte content/slecht advies? Of boeit dat niet heel erg, want je bent aan het leren en verwachtingsmanagement en zo?
 
 
