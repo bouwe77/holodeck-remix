@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useLoaderData } from '@remix-run/react'
 import type { LoaderFunction } from '@remix-run/node'
-import { getMdx } from '~/server/mdx.server'
+import { getMdx } from '~/server/mdx'
 import { getSlides } from '~/server/getSlides.server'
 import { useNavigate } from 'react-router-dom'
 import useKeyboardNavigation from '~/components/slides/useKeyboardNavigation'

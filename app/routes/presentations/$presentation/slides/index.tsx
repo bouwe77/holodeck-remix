@@ -3,7 +3,7 @@ import Preview from '~/components/slides/Preview'
 import { Slide } from '~/components/slides/Slide'
 import Wrapper from '~/components/slides/Wrapper'
 import { getSlides } from '~/server/getSlides.server'
-import { getMdx } from '~/server/mdx.server'
+import { getMdx } from '~/server/mdx'
 import styles from '~/styles/slide-preview.css'
 
 export function links() {
